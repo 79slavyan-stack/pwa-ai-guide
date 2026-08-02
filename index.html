@@ -14,10 +14,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="PWA AI Guide v4.2.4 — интерактивный карьерный роадмап по работе с ИИ">
+<meta name="description" content="PWA AI Guide v4.2.5 — интерактивный карьерный роадмап по работе с ИИ">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>PWA AI Guide v4.2.4</title>
+<title>PWA AI Guide v4.2.5</title>
 <style>
 /* === RESET & BASE === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -398,6 +398,35 @@ section.active{display:block}
 .feedback-modal .feedback-list{max-height:200px;overflow:auto;margin-top:1rem}
 .feedback-item{font-size:.85rem;padding:.5rem;background:var(--bg-card);border-radius:.4rem;margin-bottom:.4rem;border-left:3px solid var(--accent)}
 .feedback-item .meta{font-size:.75rem;color:var(--text-dim);margin-top:.2rem}
+
+/* === MODULE 2: TRACKS === */
+.track-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: .8rem;
+  transition: all .2s;
+  position: relative;
+}
+.track-step.done {
+  border-color: var(--success);
+  opacity: .7;
+}
+.track-step.current {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(96,165,250,.2);
+}
+.track-step h4 { margin-bottom: .3rem; color: #fff; }
+.track-step .step-meta { font-size: .8rem; color: var(--text-dim); display: flex; gap: .8rem; flex-wrap: wrap; }
+.track-step .step-desc { font-size: .9rem; color: var(--text-dim); margin: .4rem 0; }
+.track-step .step-checks { margin: .6rem 0; }
+.track-step .step-checks .list-item { background: var(--bg-elev); }
+.track-step .step-prompt { background: var(--bg-elev); padding: .6rem; border-radius: .4rem; font-size: .8rem; color: var(--text-dim); white-space: pre-wrap; margin: .4rem 0; }
+.track-step .step-tools { display: flex; gap: .4rem; flex-wrap: wrap; margin: .4rem 0; }
+.track-step .step-tools .tag { font-size: .7rem; }
+.track-step .step-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .6rem; }
+.track-step .step-actions .btn { font-size: .8rem; }
 </style>
 </head>
 <body>
@@ -419,7 +448,7 @@ section.active{display:block}
   <symbol id="icon-image" viewBox="0 0 24 24"><path fill="currentColor" d="M21 19V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></symbol>
   <symbol id="icon-doc" viewBox="0 0 24 24"><path fill="currentColor" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></symbol>
   <symbol id="icon-link" viewBox="0 0 24 24"><path fill="currentColor" d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7C4.2 7 2 9.2 2 12s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1 0 1.7-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z"/></symbol>
-  <symbol id="icon-gear" viewBox="0 0 24 24"><path fill="currentColor" d="M19.4 13c.1-.5.2-1 .2-1.5s-.1-1-.2-1.5l2.1-1.6a.5.5 0 00.1-.7l-2-3.5a.5.5 0 00-.6-.2l-2.5 1a9 9 0 00-2.2-1.3l-.4-2.7a.5.5 0 00-.5-.4h-4a.5.5 0 00-.5.4l-.4 2.7a9 9 0 00-2.2 1.3l-2.5-1a.5.5 0 00-.6.2l-2 3.5a.5.5 0 00.1.7l2.1 1.6c-.1.5-.2 1-.2 1.5s.1 1 .2 1.5l-2.1 1.6a.5.5 0 00-.1.7l2 3.5a.5.5 0 00.6.2l2.5-1a9 9 0 002.2 1.3l.4 2.7c0 .2.3.4.5.4h4c.3 0 .5-.2.5-.4l.4-2.7a9 9 0 002.2-1.3l2.5 1a.5.5 0 00.6-.2l2-3.5a.5.5 0 00-.1-.7l-2.1-1.6zM12 15.5A3.5 3.5 0 118.5 12 3.5 3.5 0 0112 15.5z"/></symbol>
+  <symbol id="icon-gear" viewBox="0 0 24 24"><path fill="currentColor" d="M19.4 13c.1-.5.2-1 .2-1.5s-.1-1-.2-1.5l2.1-1.6a.5.5 0 00.1-.7l-2-3.5a.5.5 0 00-.6-.2l-2.5 1a9 9 0 00-2.2-1.3l-.4-2.7a.5.5 0 00-.5-.4h-4a.5.5 0 00-.5.4l-.4 2.7a9 9 0 00-2.2 1.3l-2.5-1a.5.5 0 00-.6.2l-2 3.5a.5.5 0 00.1.7l2.1 1.6c-.1.5-.2 1-.2 1.5s.1 1 .2 1.5l-2.1 1.6a.5.5 0 00-.1.7l2 3.5a.5.5 0 00.6.2l2.5-1a9 9 0 002.2 1.3l.4 2.7c0 .2.3.4.5.4h4c.3 0 .5-.2.5-.4l.4-2.7a9 9 0 002.2-1.3l2.5 1a.5.5 0 00-.6.2l2-3.5a.5.5 0 00-.1-.7l-2.1-1.6zM12 15.5A3.5 3.5 0 118.5 12 3.5 3.5 0 0112 15.5z"/></symbol>
   <symbol id="icon-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
   <symbol id="icon-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></symbol>
   <symbol id="icon-stop" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6h12v12H6z"/></symbol>
@@ -441,7 +470,7 @@ section.active{display:block}
     <svg><use href="#icon-spider"/></svg>
   </div>
   <h1>PWA AI Guide</h1>
-  <span class="version">v4.2.4</span>
+  <span class="version">v4.2.5</span>
 </header>
 
 <!-- NAV (дропдауны) -->
@@ -462,6 +491,9 @@ section.active{display:block}
         <li><button data-tab="progress">Прогресс</button></li>
       </ul>
     </li>
+    <!-- [MODULE2_START] -->
+    <li><button data-tab="tracks">🛤️ Треки</button></li>
+    <!-- [MODULE2_END] -->
     <li><button data-tab="content">Контент</button></li>
     <li><button data-tab="dict">Словарь</button></li>
     <li><button data-tab="risks">Риски</button></li>
@@ -481,7 +513,7 @@ section.active{display:block}
 <section id="tab-start" class="active">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-rocket"/></svg> Добро пожаловать</h2>
-    <p>PWA AI Guide v4.2.4 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
+    <p>PWA AI Guide v4.2.5 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding:.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <span class="tag tag-blue" id="level-display">Уровень: Новичок (0 XP)</span>
       <span class="tag tag-green" id="streak-display">🔥 Стрик: 0 дней</span>
@@ -499,7 +531,7 @@ section.active{display:block}
       <div class="card" style="margin-bottom:0">
         <h3>Статус системы</h3>
         <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value" id="db-status">Проверка...</span></div>
-        <div class="stat-row"><span class="stat-label">Версия БД</span><span class="stat-value">v3</span></div>
+        <div class="stat-row"><span class="stat-label">Версия БД</span><span class="stat-value">v4</span></div>
         <div class="stat-row"><span class="stat-label">Сохранённых работ</span><span class="stat-value" id="works-count">0</span></div>
         <div class="stat-row"><span class="stat-label">Доход (продано)</span><span class="stat-value" id="total-income">$0</span></div>
       </div>
@@ -523,14 +555,12 @@ section.active{display:block}
   </div>
 
   <div class="card">
-    <h3>Последние обновления v4.2.4</h3>
+    <h3>Последние обновления v4.2.5</h3>
     <ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem;line-height:1.7">
-      <li><strong>Исправлены критические баги делегирования событий</strong> (чек-листы, CRM toggle-work, timeline).</li>
-      <li>Улучшена поддержка iOS Safari и приватного режима.</li>
-      <li>Обновлены версии и даты актуальности.</li>
-      <li>Вынесен манифест в отдельный файл, очищены партнёрские ссылки.</li>
-      <li>Добавлена свайп-навигация по вкладкам на мобильных устройствах.</li>
-      <li>Добавлен чек-лист «Безопасный старт» в разделе «Риски».</li>
+      <li><strong>Добавлен Модуль 2: Персональные треки</strong> — три карьерных пути: Нейро-дизайнер, AI-Контентщик и AI-Продюсер. Каждый трек содержит 8 шагов с промтами, чек-листами и XP.</li>
+      <li>Вкладка «Треки» в меню позволяет выбрать и проходить свой путь.</li>
+      <li>Прогресс сохраняется в IndexedDB и отображается в KPI.</li>
+      <li>Исправлены мелкие баги и улучшена производительность.</li>
     </ul>
   </div>
 </section>
@@ -1188,6 +1218,11 @@ section.active{display:block}
         <div class="kpi-bar"><div id="bar-onboarding" style="width:0%;background:var(--accent)"></div></div>
         <div class="kpi-value" id="val-onboarding">0%</div>
       </div>
+      <div class="kpi-row">
+        <div class="kpi-label">Треки</div>
+        <div class="kpi-bar"><div id="bar-tracks" style="width:0%;background:var(--warn)"></div></div>
+        <div class="kpi-value" id="val-tracks">0%</div>
+      </div>
       <div class="progress-bar" style="margin-top:1rem;height:14px"><div id="kpi-bar" style="width:0%"></div></div>
       <p style="text-align:center;font-size:.9rem;margin-top:.5rem">Общий KPI: <strong id="kpi-total">0%</strong></p>
     </div>
@@ -1435,6 +1470,7 @@ section.active{display:block}
         <div class="badge-item locked" data-badge="night-owl"><div class="badge-icon">🌙</div><div class="badge-name">Сова</div></div>
         <div class="badge-item locked" data-badge="early-bird"><div class="badge-icon">🌅</div><div class="badge-name">Жаворонок</div></div>
         <div class="badge-item locked" data-badge="streak-7"><div class="badge-icon">🔥</div><div class="badge-name">Недельный стрик</div></div>
+        <div class="badge-item locked" data-badge="track-master"><div class="badge-icon">🏅</div><div class="badge-name">Мастер треков</div></div>
       </div>
     </div>
   </div>
@@ -1529,9 +1565,9 @@ section.active{display:block}
     <div class="card">
       <h3>О приложении</h3>
       <div class="stat-row"><span class="stat-label">Название</span><span class="stat-value">PWA AI Guide</span></div>
-      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.4</span></div>
+      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.5</span></div>
       <div class="stat-row"><span class="stat-label">Лицензия</span><span class="stat-value">MIT</span></div>
-      <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v3 (9 stores)</span></div>
+      <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v4 (10 stores)</span></div>
       <div class="stat-row"><span class="stat-label">Иконка</span><span class="stat-value">Neural Spider</span></div>
       <p style="font-size:.8rem;color:var(--text-dim);margin-top:.6rem">Приложение работает полностью в браузере. Данные хранятся локально.</p>
     </div>
@@ -1586,7 +1622,7 @@ section.active{display:block}
         <option value="0">Module 0 — Багфикс ядра</option>
         <option value="1.5">Module 1.5 — Контентный редизайн</option>
         <option value="0.5">Module 0.5 — Team Dashboard</option>
-        <option value="2">Module 2 — Трек «Нейро-арт»</option>
+        <option value="2">Module 2 — Треки под ниши</option>
         <option value="3">Module 3 — Генератор промтов</option>
         <option value="4">Module 4 — Фриланс-механика</option>
         <option value="5">Module 5 — CRM v2</option>
@@ -1783,7 +1819,7 @@ section.active{display:block}
 
 <!-- ФУТЕР -->
 <footer class="app-footer">
-  <p>PWA AI Guide v4.2.4 · Работает офлайн · Данные хранятся локально</p>
+  <p>PWA AI Guide v4.2.5 · Работает офлайн · Данные хранятся локально</p>
   <p style="margin-top:.4rem">* — партнёрские ссылки. Мы получаем комиссию от партнёров без дополнительных затрат для вас.</p>
   <p style="margin-top:.4rem">Российские сервисы (GigaChat, Kandinsky, Kwork) рекомендуются приоритетно для аудитории РФ.</p>
   <p style="margin-top:.4rem; font-size:.7rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:.4rem;">
@@ -1975,12 +2011,12 @@ Negative prompt: размытость, лишние пальцы, низкое �
 <!-- =================================================================== -->
 <script>
 /* ========================
-   PWA AI Guide v4.2.4 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Swipe Navigation + Safety Checklist
+   PWA AI Guide v4.2.5 — Module 2 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Swipe Navigation + Safety Checklist
    ======================== */
 
 const DB_NAME = 'AIGuideDB';
-const DB_VERSION = 3;
-const STORES = ['works','prompts','checks','timeline','pomo','settings','goals','swot','reflections'];
+const DB_VERSION = 4;
+const STORES = ['works','prompts','checks','timeline','pomo','settings','goals','swot','reflections','tracks'];
 
 let db = null;
 let dbFallbackMode = false;
@@ -1999,7 +2035,7 @@ const DEFAULT_MODULES = [
   { id: '0', name: 'Module 0', desc: 'Багфикс ядра (init, IndexedDB fallback, iOS)', status: 'DONE' },
   { id: '1.5', name: 'Module 1.5', desc: 'Контентный редизайн (Рынок/Промты/Монет)', status: 'DONE' },
   { id: '0.5', name: 'Module 0.5', desc: 'Team Dashboard (вкладка «Команда»)', status: 'DONE' },
-  { id: '2', name: 'Module 2', desc: 'Трек «Нейро-арт» (8 шагов)', status: 'TODO' },
+  { id: '2', name: 'Module 2', desc: 'Треки под ниши (3 трека по 8 шагов)', status: 'DONE' },
   { id: '3', name: 'Module 3', desc: 'Генератор промтов + Калькулятор цен', status: 'TODO' },
   { id: '4', name: 'Module 4', desc: 'Фриланс-механика (налоги, ТЗ, оплата)', status: 'TODO' },
   { id: '5', name: 'Module 5', desc: 'CRM v2 (воронка, канбан, дедлайны)', status: 'TODO' },
@@ -2013,7 +2049,7 @@ const DEFAULT_TASKS = [
   { id: 't3', title: 'Сборка Module 0.5 (Team Dashboard)', assignee: 'DEEPSEEK', status: 'DONE', module: '0.5', desc: 'Добавить вкладку «Команда» по TZ v1.0.', created: '2026-07-28', updated: '2026-07-28' },
   { id: 't4', title: 'Написать статью-кейс', assignee: 'KIMI', status: 'BLOCKED', module: 'ARTICLE', desc: 'Ждёт финального билда. 3 заголовка утверждены.', created: '2026-07-28', updated: '2026-07-28' },
   { id: 't5', title: 'Разделить активы / крипто-кошелёк', assignee: 'PRODUCER', status: 'PROGRESS', module: 'BUSINESS', desc: 'Срочно: не открывать ИП на себя, не принимать деньги на свои карты.', created: '2026-07-28', updated: '2026-07-28' },
-  { id: 't6', title: 'Сборка Module 2 — Треки под ниши', assignee: 'DEEPSEEK', status: 'TODO', module: '2', desc: 'Треки: дизайнер, копирайтер, продюсер. Прогресс-бар, шаблоны под каждый трек.', created: '2026-08-01', updated: '2026-08-01' }
+  { id: 't6', title: 'Сборка Module 2 — Треки под ниши', assignee: 'DEEPSEEK', status: 'DONE', module: '2', desc: 'Треки: дизайнер, копирайтер, продюсер. Прогресс-бар, шаблоны под каждый трек.', created: '2026-08-01', updated: '2026-08-02' }
 ];
 
 function initTeamStorage() {
@@ -2620,26 +2656,10 @@ function openDB(retries = 3) {
       if (!oldDb.objectStoreNames.contains('goals')) oldDb.createObjectStore('goals', {keyPath:'id', autoIncrement:true});
       if (!oldDb.objectStoreNames.contains('swot')) oldDb.createObjectStore('swot', {keyPath:'key'});
       if (!oldDb.objectStoreNames.contains('reflections')) oldDb.createObjectStore('reflections', {keyPath:'id', autoIncrement:true});
+      if (!oldDb.objectStoreNames.contains('tracks')) oldDb.createObjectStore('tracks', {keyPath:'id'});
 
-      if (oldVer < 3) {
-        if (oldDb.objectStoreNames.contains('works')) {
-          const store = req.transaction.objectStore('works');
-          store.openCursor().onsuccess = function(e) {
-            const cursor = e.target.result;
-            if (cursor) {
-              const w = cursor.value;
-              if (!w.status) w.status = 'idea';
-              if (!w.price) w.price = 0;
-              if (!w.currency) w.currency = 'USD';
-              if (!w.tools) w.tools = '';
-              if (!w.platform) w.platform = '';
-              if (!w.dateCreated) w.dateCreated = w.created || Date.now();
-              if (!w.dateCompleted) w.dateCompleted = null;
-              cursor.update(w);
-              cursor.continue();
-            }
-          };
-        }
+      if (oldVer < 4) {
+        // Миграция для новых store уже добавлена выше
       }
     };
   });
@@ -3379,6 +3399,14 @@ async function refreshKPI() {
   const incomeProgress = Math.min(Math.round(income/incomeTarget*100), 100);
   const onboardProgress = onboarded ? 100 : 0;
 
+  // Треки
+  const trackPromises = ['designer', 'content', 'producer'].map(async id => {
+    const p = await getTrackProgress(id);
+    return p.progress;
+  });
+  const trackProgresses = await Promise.all(trackPromises);
+  const trackAvg = Math.round(trackProgresses.reduce((a,b) => a+b, 0) / 3);
+
   document.getElementById('bar-goals').style.width = goalProgress+'%';
   document.getElementById('val-goals').textContent = goalProgress+'%';
   document.getElementById('bar-checks').style.width = checkTotal+'%';
@@ -3389,8 +3417,10 @@ async function refreshKPI() {
   document.getElementById('val-income').textContent = '$'+income.toFixed(0);
   document.getElementById('bar-onboarding').style.width = onboardProgress+'%';
   document.getElementById('val-onboarding').textContent = onboardProgress+'%';
+  document.getElementById('bar-tracks').style.width = trackAvg+'%';
+  document.getElementById('val-tracks').textContent = trackAvg+'%';
 
-  const total = Math.round((goalProgress + checkTotal + tlProgress + incomeProgress + onboardProgress)/5);
+  const total = Math.round((goalProgress + checkTotal + tlProgress + incomeProgress + onboardProgress + trackAvg) / 6);
   document.getElementById('kpi-total').textContent = total+'%';
   document.getElementById('kpi-bar').style.width = total+'%';
 }
@@ -3532,6 +3562,13 @@ async function refreshBadges() {
   unlock('early-bird', hour >= 5 && hour < 8);
   const streak = parseInt(localStorage.getItem('ai_guide_streak_count') || '0');
   unlock('streak-7', streak >= 7);
+  
+  // Track master
+  const trackAllDone = await Promise.all(['designer','content','producer'].map(async id => {
+    const p = await getTrackProgress(id);
+    return p.done === p.total && p.total > 0;
+  }));
+  unlock('track-master', trackAllDone.every(Boolean));
 }
 
 /* ========================
@@ -3657,6 +3694,139 @@ function navigateTab(direction) {
   if (newIdx < 0) newIdx = tabs.length - 1;
   if (newIdx >= tabs.length) newIdx = 0;
   tabs[newIdx].click();
+}
+
+/* ========================
+   TRACKS LOGIC (Module 2)
+   ======================== */
+const TRACKS = {
+  designer: {
+    title: 'Нейро-дизайнер',
+    icon: '🎨',
+    steps: [
+      { title: 'Первая генерация', time: '20 мин', xp: 10, desc: 'Зарегистрируйтесь в Kandinsky или Midjourney. Сгенерируйте 5 изображений по простым промтам, сохраните лучшие 3.', prompt: 'Минималистичный логотип для кофейни, пастельные тона, векторный стиль, белый фон', tools: ['Kandinsky', 'Midjourney', 'ChatGPT'], checks: ['Зарегистрироваться в Kandinsky/Midjourney', 'Сгенерировать 5 изображений', 'Сохранить лучшие 3'] },
+      { title: 'Освоение стилей', time: '30 мин', xp: 15, desc: 'Изучите 3 стиля: киберпанк, минимализм, ретро-футуризм. Сгенерируйте по 3 работы в каждом стиле, сравните результаты.', prompt: 'Киберпанк-город ночью, неоновые вывески на кириллице, дождь, отражения на асфальте, 8k', tools: ['Midjourney', 'Stable Diffusion', 'ComfyUI'], checks: ['Изучить 3 стиля', 'Сгенерировать по 3 работы в каждом стиле', 'Сравнить результаты'] },
+      { title: 'Постобработка', time: '40 мин', xp: 15, desc: 'Освойте апскейл (Upscayl / Photoshop), уберите артефакты, настройте цветокоррекцию. Подготовьте 5 работ к публикации.', prompt: '(negative prompt) blurry, lowres, bad anatomy, extra fingers, watermark', tools: ['Upscayl', 'Photoshop', 'GIMP'], checks: ['Освоить апскейл', 'Убрать артефакты', 'Настроить цветокоррекцию', 'Подготовить 5 работ'] },
+      { title: 'Портфолио', time: '30 мин', xp: 10, desc: 'Создайте страницу на Behance или в Telegram. Оформите 10 лучших работ, напишите описание к каждой.', prompt: 'Создай портфолио из 10 работ с описанием, стиль: современный минимализм', tools: ['Behance', 'Telegram', 'Instagram'], checks: ['Создать страницу на Behance/Telegram', 'Оформить 10 работ', 'Написать описания'] },
+      { title: 'Первая продажа', time: '60 мин', xp: 20, desc: 'Разместите услугу на Kwork или FL.ru. Откликнитесь на 5 заказов, получите первый заказ (даже за символическую цену).', prompt: 'Шаблон для отклика: Здравствуйте! Я AI-дизайнер, могу выполнить вашу задачу качественно и в срок. Вот моё портфолио: [ссылка]', tools: ['Kwork', 'FL.ru', 'Fiverr'], checks: ['Разместить услугу на Kwork/FL.ru', 'Откликнуться на 5 заказов', 'Получить первый заказ'] },
+      { title: 'Стоки и пассив', time: '40 мин', xp: 15, desc: 'Загрузите 20 работ на Shutterstock или Adobe Stock. Оформите ключевые слова и описания, настройте вывод средств.', prompt: 'Создай 20 универсальных AI-изображений для стоков, без логотипов, высокое качество, 8k', tools: ['Shutterstock', 'Adobe Stock', 'Freepik'], checks: ['Загрузить 20 работ на стоки', 'Оформить ключевые слова', 'Настроить вывод средств'] },
+      { title: 'Принты и мерч', time: '40 мин', xp: 15, desc: 'Создайте 5 дизайнов для принтов (T-shirt, постеры). Залийте на Printful + Etsy или Boosty, настройте мокапы.', prompt: 'Дизайн для футболки с надписью "AI is the new black", минимализм, белый фон', tools: ['Printful', 'Etsy', 'Boosty'], checks: ['Создать 5 дизайнов', 'Загрузить на платформы', 'Настроить мокапы'] },
+      { title: 'Масштаб', time: '30 мин', xp: 25, desc: 'Создайте шаблонный набор промтов для продажи. Настройте авто-выдачу на Gumroad или Boosty, запланируйте рекламу.', prompt: 'Набор из 50 промтов для AI-арта в стиле киберпанк и минимализм, PDF-гайд с примерами', tools: ['Gumroad', 'Boosty', 'Telegram Ads'], checks: ['Создать шаблонный набор промтов', 'Настроить авто-выдачу', 'Запланировать рекламу'] }
+    ]
+  },
+  content: {
+    title: 'AI-Контентщик',
+    icon: '✍️',
+    steps: [
+      { title: 'Пишем первый пост', time: '20 мин', xp: 10, desc: 'Сгенерируйте 3 варианта поста для Instagram/Telegram, отредактируйте вручную, опубликуйте.', prompt: 'Роль: SMM-специалист. Напиши 3 поста о пользе ИИ для бизнеса. Тон: разговорный, с примерами.', tools: ['ChatGPT', 'GigaChat', 'Canva'], checks: ['Сгенерировать 3 поста', 'Отредактировать вручную', 'Опубликовать'] },
+      { title: 'Холодные письма', time: '30 мин', xp: 15, desc: 'Составьте шаблон холодного письма, разошлите 10 писем потенциальным клиентам, зафиксируйте ответы.', prompt: 'Шаблон из раздела "Шаблоны" приложения: Здравствуйте, [Имя]! Я AI-копирайтер...', tools: ['Telegram', 'Email', 'CRM'], checks: ['Составить шаблон письма', 'Разослать 10 писем', 'Зафиксировать ответы'] },
+      { title: 'Email-воронка', time: '40 мин', xp: 15, desc: 'Создайте welcome-цепочку из 3 писем. Настройте рассылку (если есть сервис).', prompt: 'Напиши цепочку из 3 писем для подписчиков, скачавших гайд. Письмо 1: благодарность, Письмо 2: кейс, Письмо 3: предложение.', tools: ['Mailchimp', 'SendPulse', 'Unisender'], checks: ['Создать цепочку из 3 писем', 'Настроить рассылку'] },
+      { title: 'SEO-статья', time: '60 мин', xp: 20, desc: 'Напишите статью 1000+ слов с ключевыми словами, проверьте уникальность, опубликуйте на Хабр / VC / свой блог.', prompt: 'Статья на тему: "5 способов AI помогает бизнесу", 1000 слов, экспертным тоном, с примерами', tools: ['Хабр', 'VC.ru', 'Telegram'], checks: ['Написать статью 1000+ слов', 'Проверить уникальность', 'Опубликовать'] },
+      { title: 'Контент-план', time: '30 мин', xp: 10, desc: 'Составьте план на месяц (12 постов). Сгенерируйте тексты через пакетный промт, запланируйте публикации.', prompt: 'Создай контент-план для Telegram-канала о ИИ на 30 дней: 12 постов, темы: инструменты, кейсы, новости, советы.', tools: ['Notion', 'Google Sheets', 'Telegram'], checks: ['Составить план на месяц', 'Сгенерировать тексты', 'Запланировать публикации'] },
+      { title: 'Копирайтинг для маркетплейсов', time: '40 мин', xp: 15, desc: 'Напишите 5 описаний товаров для Ozon/Wildberries. Добавьте SEO-ключи, сделайте A/B тест заголовков.', prompt: 'Описание для блендера: мощный, стильный, надёжный. Ключевые слова: блендер, кухонная техника, качество.', tools: ['Ozon', 'Wildberries', 'ChatGPT'], checks: ['Написать 5 описаний', 'Добавить SEO-ключи', 'Провести A/B тест заголовков'] },
+      { title: 'Сценарии для видео', time: '40 мин', xp: 15, desc: 'Напишите 3 сценария для Reels/TikTok (15–30 сек). Сгенерируйте озвучку (ElevenLabs), смонтируйте в CapCut.', prompt: 'Сценарий для Reels: "Как ИИ меняет дизайн". Вступление: 5 сек, основная часть: 15 сек, призыв: 5 сек.', tools: ['ElevenLabs', 'CapCut', 'Runway'], checks: ['Написать 3 сценария', 'Сгенерировать озвучку', 'Смонтировать'] },
+      { title: 'Инфопродукт', time: '60 мин', xp: 25, desc: 'Создайте PDF-гайд или Notion-шаблон. Оформите лендинг (в Telegram / на Tilda), запустите продажи.', prompt: 'Гайд "Как начать зарабатывать на AI-контенте" – 30 страниц, с шаблонами и примерами.', tools: ['Canva', 'Tilda', 'Telegram'], checks: ['Создать PDF-гайд / Notion-шаблон', 'Оформить лендинг', 'Запустить продажи'] }
+    ]
+  },
+  producer: {
+    title: 'AI-Продюсер',
+    icon: '⚙️',
+    steps: [
+      { title: 'Первый бот', time: '30 мин', xp: 10, desc: 'Создайте Telegram-бота через @BotFather, напишите скрипт на Python для ответа на команды, задеплойте на бесплатный хостинг.', prompt: 'Напиши Python-скрипт для Telegram-бота, который отвечает на /start и /help', tools: ['PythonAnywhere', 'Replit', 'Telegram Bot API'], checks: ['Создать бота через BotFather', 'Написать скрипт', 'Задеплоить'] },
+      { title: 'Автоматизация отчётов', time: '40 мин', xp: 15, desc: 'Напишите скрипт парсинга данных (requests / BeautifulSoup), сформируйте Excel/PDF отчёт, настройте запуск по расписанию.', prompt: 'Скрипт для парсинга цен с сайта конкурентов и отправки отчёта в Telegram.', tools: ['Python', 'Requests', 'BeautifulSoup'], checks: ['Написать скрипт парсинга', 'Сформировать отчёт', 'Настроить расписание'] },
+      { title: 'Интеграция с API ИИ', time: '40 мин', xp: 15, desc: 'Подключите GigaChat API или OpenRouter, создайте простой интерфейс (CLI или TG-бот), протестируйте 10 запросов.', prompt: 'Код для подключения к GigaChat API и отправки запроса на генерацию текста.', tools: ['GigaChat API', 'OpenRouter', 'Python'], checks: ['Подключить API', 'Создать интерфейс', 'Протестировать 10 запросов'] },
+      { title: 'CRM-автоматизация', time: '60 мин', xp: 20, desc: 'Создайте Google Sheets + Google Apps Script. Автоматизируйте сбор заявок с формы, настройте уведомления в Telegram.', prompt: 'Google Apps Script для обработки заявок из Google Формы и отправки в Telegram.', tools: ['Google Sheets', 'Apps Script', 'Telegram'], checks: ['Создать таблицу и скрипт', 'Настроить сбор заявок', 'Настроить уведомления'] },
+      { title: 'Парсинг и мониторинг', time: '40 мин', xp: 15, desc: 'Напишите парсер цен конкурентов, настройте алёрты при изменении цен, сохраняйте историю в БД.', prompt: 'Парсер цен с сайта конкурентов, который проверяет каждые 6 часов и отправляет отчёт в Telegram.', tools: ['Python', 'SQLite', 'Telegram'], checks: ['Написать парсер', 'Настроить алёрты', 'Сохранять историю'] },
+      { title: 'Первый коммерческий заказ', time: '60 мин', xp: 20, desc: 'Составьте КП (коммерческое предложение), отправьте 5 потенциальным клиентам, проведите созвон/переписку.', prompt: 'Коммерческое предложение по автоматизации бизнеса. Описание: что сделаем, сроки, стоимость, условия.', tools: ['Google Docs', 'Telegram', 'Email'], checks: ['Составить КП', 'Отправить 5 клиентам', 'Провести переговоры'] },
+      { title: 'Документация и SOP', time: '30 мин', xp: 15, desc: 'Опишите все процессы текстом, создайте шаблоны договоров, настройте базу знаний (Notion).', prompt: 'Шаблон договора на оказание услуг по автоматизации. Включает: предмет, сроки, оплату, права.', tools: ['Notion', 'Google Docs'], checks: ['Описать процессы', 'Создать шаблоны договоров', 'Настроить базу знаний'] },
+      { title: 'Масштабирование', time: '40 мин', xp: 25, desc: 'Найдите 1 подрядчика / junior, передайте ему рутинные задачи, сфокусируйтесь на стратегии и продажах.', prompt: 'План передачи задач: что делегировать, как обучить, как контролировать качество.', tools: ['Telegram', 'Trello', 'Notion'], checks: ['Найти подрядчика', 'Передать рутинные задачи', 'Сфокусироваться на стратегии'] }
+    ]
+  }
+};
+
+async function toggleTrackStep(trackId, stepIndex) {
+  const id = trackId + '-' + stepIndex;
+  const existing = await dbGet('tracks', id);
+  const done = existing ? !existing.done : true;
+  const data = { id, trackId, stepIndex, done, dateCompleted: done ? Date.now() : null };
+  await dbPut('tracks', data);
+  
+  const step = TRACKS[trackId].steps[stepIndex-1];
+  if (done) addXP(step.xp, `Трек ${TRACKS[trackId].title}: шаг ${stepIndex} «${step.title}»`);
+  
+  renderTrack(trackId);
+  refreshKPI();
+  refreshBadges();
+  toast(done ? `✅ Шаг ${stepIndex} завершён! +${step.xp} XP` : 'Шаг отменён');
+}
+
+async function getTrackProgress(trackId) {
+  const all = await dbGetAll('tracks');
+  const trackSteps = all.filter(s => s.trackId === trackId);
+  const total = TRACKS[trackId].steps.length;
+  const done = trackSteps.filter(s => s.done).length;
+  return { total, done, progress: total ? Math.round(done/total*100) : 0 };
+}
+
+async function renderTrack(trackId) {
+  const container = document.getElementById(`track-${trackId}-steps`);
+  if (!container) return;
+  const steps = TRACKS[trackId].steps;
+  const all = await dbGetAll('tracks');
+  const trackSteps = all.filter(s => s.trackId === trackId);
+  const progress = await getTrackProgress(trackId);
+  
+  document.getElementById(`track-${trackId}-bar`).style.width = progress.progress + '%';
+  document.getElementById(`track-${trackId}-val`).textContent = progress.progress + '%';
+
+  container.innerHTML = steps.map((step, idx) => {
+    const stepIndex = idx + 1;
+    const id = trackId + '-' + stepIndex;
+    const saved = trackSteps.find(s => s.id === id);
+    const done = saved ? saved.done : false;
+    const current = !done && (trackSteps.filter(s => s.done).length === idx);
+    return `
+      <div class="track-step ${done ? 'done' : ''} ${current ? 'current' : ''}">
+        <h4>${stepIndex}. ${step.title}</h4>
+        <div class="step-meta">
+          <span>⏱ ${step.time}</span>
+          <span>🏆 +${step.xp} XP</span>
+        </div>
+        <div class="step-desc">${step.desc}</div>
+        <div class="step-checks">
+          ${step.checks.map(check => `
+            <div class="list-item ${done ? 'done' : ''}" style="padding:.3rem .6rem">
+              <input type="checkbox" ${done ? 'checked' : ''} data-track-id="${trackId}" data-step="${stepIndex}" data-action="track-check">
+              <span style="font-size:.85rem">${check}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="step-prompt">
+          <strong>📝 Пример промта</strong>
+          <pre style="margin:.4rem 0; background:var(--bg-elev); padding:.4rem; border-radius:.4rem; font-size:.8rem">${step.prompt}</pre>
+          <button class="btn btn-sm btn-secondary" onclick="copyText('${step.prompt}')">📋 Копировать промт</button>
+        </div>
+        <div class="step-tools">
+          ${step.tools.map(tool => `<span class="tag">${renderAffiliateLink(tool)}</span>`).join('')}
+        </div>
+        <div class="step-actions">
+          <button class="btn ${done ? 'btn-secondary' : 'btn-primary'} btn-sm" onclick="toggleTrackStep('${trackId}', ${stepIndex})">
+            ${done ? '✅ Отметить невыполненным' : '✅ Отметить выполненным'}
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Промт скопирован'));
+}
+
+async function renderAllTracks() {
+  await renderTrack('designer');
+  await renderTrack('content');
+  await renderTrack('producer');
 }
 
 /* ========================
@@ -3909,11 +4079,20 @@ function initDelegation() {
       renderWorks();
     }
 
-    // Path buttons (Market -> Plan)
+    // Path buttons (Market -> Plan) -> теперь переключает на Треки
     if (btn.classList.contains('path-btn') && btn.dataset.niche) {
       e.preventDefault();
-      if (confirm('Создать карьерный трек «' + (NICHE_TRACKS[btn.dataset.niche]?.title || btn.dataset.niche) + '»? Будут добавлены SMART-цели и чек-листы.')) {
-        generateTrackFromNiche(btn.dataset.niche);
+      const niche = btn.dataset.niche;
+      const trackMap = { prompt: 'designer', art: 'designer', video: 'producer', auto: 'producer', consult: 'producer', freelance: 'content' };
+      const trackId = trackMap[niche] || 'designer';
+      if (confirm('Создать карьерный трек «' + (NICHE_TRACKS[niche]?.title || niche) + '»? Будут добавлены SMART-цели и чек-листы.')) {
+        generateTrackFromNiche(niche);
+        // Переключить на вкладку Треки
+        document.querySelector('[data-tab="tracks"]')?.click();
+        // Активировать соответствующий sub-tab
+        document.querySelector('[data-subnav="tracks"] button[data-sub="' + trackId + '"]')?.click();
+        // Вызвать renderTrack для этого трека
+        renderTrack(trackId);
       }
     }
 
@@ -3962,6 +4141,13 @@ function initDelegation() {
           renderWorks();
         }
       })();
+      return;
+    }
+
+    // Обработка чекбоксов в треках (декоративные, но можно сохранять)
+    if (target.dataset.action === 'track-check') {
+      // Пока просто тост для обратной связи
+      toast('Чекбоксы в треках пока не сохраняются, но прогресс шага отслеживается');
       return;
     }
 
@@ -4106,7 +4292,10 @@ async function init() {
   // === СВАЙП-НАВИГАЦИЯ (Фаза 2.0) ===
   initSwipeNav();
 
-  console.log('PWA AI Guide v4.2.4 (Full Integration) initialized');
+  // === ТРЕКИ (Module 2) ===
+  await renderAllTracks();
+
+  console.log('PWA AI Guide v4.2.5 (Module 2) initialized');
 }
 
 /* Исправленная инициализация для Safari iOS */
