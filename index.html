@@ -5,12 +5,19 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self';">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" type="image/png" href="Icon_512x512.png">
+<meta property="og:title" content="PWA AI Guide — Система вместо хаоса">
+<meta property="og:description" content="Персональный наставник по работе с генеративным ИИ для фрилансеров. Практика, шаблоны, треки под нишу.">
+<meta property="og:image" content="https://79slavyan-stack.github.io/pwa-ai-guide/Icon_512x512.png">
+<meta property="og:url" content="https://79slavyan-stack.github.io/pwa-ai-guide/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="PWA AI Guide v4.2.3 — интерактивный карьерный роадмап по работе с ИИ">
+<meta name="description" content="PWA AI Guide v4.2.4 — интерактивный карьерный роадмап по работе с ИИ">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>PWA AI Guide v4.2.3</title>
+<title>PWA AI Guide v4.2.4</title>
 <style>
 /* === RESET & BASE === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -223,7 +230,7 @@ img,svg{max-width:100%;display:block}
 .app-nav::-webkit-scrollbar{display:none}
 .app-nav ul{display:flex;gap:.25rem;padding:.4rem .6rem;list-style:none;min-width:max-content;align-items:center}
 .app-nav ul li{position:relative}
-.app-nav ul li>button{padding:.45rem .7rem;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--text-dim);white-space:nowrap;transition:.2s;background:none;border:none}
+.app-nav ul li>button{padding:.55rem .85rem;min-height:40px;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--text-dim);white-space:nowrap;transition:.2s;background:none;border:none}
 .app-nav ul li>button:hover{color:var(--text)}
 .app-nav ul li>button.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 2px 10px rgba(96,165,250,.25)}
 .app-nav ul li .dropdown{position:absolute;top:100%;left:0;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);padding:.4rem 0;min-width:180px;display:none;box-shadow:var(--shadow);z-index:60}
@@ -434,7 +441,7 @@ section.active{display:block}
     <svg><use href="#icon-spider"/></svg>
   </div>
   <h1>PWA AI Guide</h1>
-  <span class="version">v4.2.3</span>
+  <span class="version">v4.2.4</span>
 </header>
 
 <!-- NAV (дропдауны) -->
@@ -474,7 +481,7 @@ section.active{display:block}
 <section id="tab-start" class="active">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-rocket"/></svg> Добро пожаловать</h2>
-    <p>PWA AI Guide v4.2.3 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
+    <p>PWA AI Guide v4.2.4 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding:.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <span class="tag tag-blue" id="level-display">Уровень: Новичок (0 XP)</span>
       <span class="tag tag-green" id="streak-display">🔥 Стрик: 0 дней</span>
@@ -516,12 +523,14 @@ section.active{display:block}
   </div>
 
   <div class="card">
-    <h3>Последние обновления v4.2.3</h3>
+    <h3>Последние обновления v4.2.4</h3>
     <ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem;line-height:1.7">
       <li><strong>Исправлены критические баги делегирования событий</strong> (чек-листы, CRM toggle-work, timeline).</li>
       <li>Улучшена поддержка iOS Safari и приватного режима.</li>
       <li>Обновлены версии и даты актуальности.</li>
       <li>Вынесен манифест в отдельный файл, очищены партнёрские ссылки.</li>
+      <li>Добавлена свайп-навигация по вкладкам на мобильных устройствах.</li>
+      <li>Добавлен чек-лист «Безопасный старт» в разделе «Риски».</li>
     </ul>
   </div>
 </section>
@@ -1380,6 +1389,15 @@ section.active{display:block}
     <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:.6rem">Если у вас есть долги или арестованные счета, стандартные советы не работают. Используйте этот чек-лист для безопасных действий.</p>
     <div id="personal-risks-checklist"></div>
   </div>
+
+  <!-- Чек-лист безопасного старта -->
+  <div class="card">
+    <h3 style="color:var(--accent)">🛡️ Чек-лист: Безопасный старт фриланса</h3>
+    <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:.6rem">
+      Если у вас есть исполнительные производства или арестованные счета, пройдите этот чек-лист перед первым заказом.
+    </p>
+    <div id="safety-checklist"></div>
+  </div>
 </section>
 
 <!-- ====== ПРОГРЕСС (Бейджи + XP) ====== -->
@@ -1511,7 +1529,7 @@ section.active{display:block}
     <div class="card">
       <h3>О приложении</h3>
       <div class="stat-row"><span class="stat-label">Название</span><span class="stat-value">PWA AI Guide</span></div>
-      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.3</span></div>
+      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.4</span></div>
       <div class="stat-row"><span class="stat-label">Лицензия</span><span class="stat-value">MIT</span></div>
       <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v3 (9 stores)</span></div>
       <div class="stat-row"><span class="stat-label">Иконка</span><span class="stat-value">Neural Spider</span></div>
@@ -1765,7 +1783,7 @@ section.active{display:block}
 
 <!-- ФУТЕР -->
 <footer class="app-footer">
-  <p>PWA AI Guide v4.2.3 · Работает офлайн · Данные хранятся локально</p>
+  <p>PWA AI Guide v4.2.4 · Работает офлайн · Данные хранятся локально</p>
   <p style="margin-top:.4rem">* — партнёрские ссылки. Мы получаем комиссию от партнёров без дополнительных затрат для вас.</p>
   <p style="margin-top:.4rem">Российские сервисы (GigaChat, Kandinsky, Kwork) рекомендуются приоритетно для аудитории РФ.</p>
   <p style="margin-top:.4rem; font-size:.7rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:.4rem;">
@@ -1957,7 +1975,7 @@ Negative prompt: размытость, лишние пальцы, низкое �
 <!-- =================================================================== -->
 <script>
 /* ========================
-   PWA AI Guide v4.2.3 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback
+   PWA AI Guide v4.2.4 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Swipe Navigation + Safety Checklist
    ======================== */
 
 const DB_NAME = 'AIGuideDB';
@@ -2250,6 +2268,18 @@ const PERSONAL_RISKS_CHECKS = [
   "Оформить самозанятость на доверенное лицо (супруга, родственника)",
   "Завести отдельную бизнес-почту и не смешивать личные данные",
   "Сделать резервную копию всех активов (код, контент, доступы)"
+];
+
+/* === SAFETY CHECKLIST === */
+const SAFETY_CHECKS = [
+  "Проверить наличие ИП на себя (если есть — не принимать деньги на свои карты)",
+  "Открыть самозанятость на доверенное лицо (супруг, родственник)",
+  "Создать крипто-кошелёк Trust Wallet / MetaMask для USDT TRC-20",
+  "Перевести домены и хостинг на партнёра или доверенное лицо",
+  "Завести отдельную бизнес-почту (не привязанную к личному телефону)",
+  "Сделать резервную копию всех доступов (2FA, пароли, seed-фразы)",
+  "Проверить, что GitHub-репозиторий не ведёт на личный аккаунт (при необходимости — transfer)",
+  "Зафиксировать договорённости с доверенным лицом устно и в переписке"
 ];
 
 /* === CHECKLISTS === */
@@ -3116,6 +3146,7 @@ async function initChecklists() {
   renderChecklist('1y', 'check-1y');
   renderEthicsChecks();
   renderPersonalRisksChecklist();
+  renderSafetyChecks();
 }
 
 async function renderChecklist(listKey, containerId) {
@@ -3160,7 +3191,6 @@ async function renderEthicsChecks() {
   `).join('');
 }
 
-/* ===== Personal Risks Checklist (новый) ===== */
 async function renderPersonalRisksChecklist() {
   const container = document.getElementById('personal-risks-checklist');
   const all = await dbGetAll('checks');
@@ -3170,6 +3200,24 @@ async function renderPersonalRisksChecklist() {
       await dbAdd('checks', {list:'personal', text, done:false, custom:false});
     }
     items = await dbGetAll('checks').then(a => a.filter(c => c.list === 'personal'));
+  }
+  container.innerHTML = items.map(c => `
+    <div class="list-item ${c.done?'done':''}" data-id="${c.id}">
+      <input type="checkbox" ${c.done?'checked':''} data-action="toggle-check" data-id="${c.id}">
+      <span style="flex:1;font-size:.9rem">${escapeHtml(c.text)}</span>
+    </div>
+  `).join('');
+}
+
+async function renderSafetyChecks() {
+  const container = document.getElementById('safety-checklist');
+  const all = await dbGetAll('checks');
+  let items = all.filter(c => c.list === 'safety');
+  if (!items.length) {
+    for (const text of SAFETY_CHECKS) {
+      await dbAdd('checks', {list:'safety', text, done:false, custom:false});
+    }
+    items = await dbGetAll('checks').then(a => a.filter(c => c.list === 'safety'));
   }
   container.innerHTML = items.map(c => `
     <div class="list-item ${c.done?'done':''}" data-id="${c.id}">
@@ -3190,6 +3238,7 @@ async function toggleCheck(id, listKey) {
   if (listKey) {
     if (listKey === 'ethics') renderEthicsChecks();
     else if (listKey === 'personal') renderPersonalRisksChecklist();
+    else if (listKey === 'safety') renderSafetyChecks();
     else renderChecklist(listKey, 'check-' + listKey);
   } else {
     // Fallback: если listKey не передан, рендерим все (старая логика)
@@ -3200,6 +3249,7 @@ async function toggleCheck(id, listKey) {
     renderChecklist('1y', 'check-1y');
     renderEthicsChecks();
     renderPersonalRisksChecklist();
+    renderSafetyChecks();
   }
   
   if (listKey === '5m' && all.filter(c => c.list === '5m').every(c => c.done)) {
@@ -3546,6 +3596,70 @@ function initPomoSettings() {
 }
 
 /* ========================
+   SWIPE NAVIGATION (MODULE 2.0)
+   ======================== */
+function initSwipeNav() {
+  // Показываем подсказку один раз на мобильных
+  if (window.innerWidth < 768 && !localStorage.getItem('swipe_hint_shown')) {
+    toast('👆 Свайпайте влево/вправо для переключения вкладок', 'warn');
+    localStorage.setItem('swipe_hint_shown', '1');
+  }
+
+  let startX = 0, startY = 0, isSwiping = false;
+  const threshold = 50;
+
+  document.addEventListener('touchstart', (e) => {
+    const target = e.target;
+    // Исключаем элементы, где свайп мешает
+    if (target.closest('input') || target.closest('textarea') || target.closest('select') ||
+        target.closest('.kanban-card') || target.closest('.modal-overlay') || target.closest('.app-nav')) {
+      return;
+    }
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    isSwiping = true;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - startX;
+    const deltaY = touch.clientY - startY;
+    // Если вертикальное смещение слишком большое — отменяем свайп
+    if (Math.abs(deltaY) > 30) {
+      isSwiping = false;
+      return;
+    }
+    if (Math.abs(deltaX) > threshold) {
+      isSwiping = false;
+      e.preventDefault(); // предотвращаем горизонтальный скролл
+      if (deltaX < 0) {
+        // свайп влево → следующая вкладка
+        navigateTab(1);
+      } else {
+        navigateTab(-1);
+      }
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchend', () => {
+    isSwiping = false;
+  });
+}
+
+function navigateTab(direction) {
+  const tabs = document.querySelectorAll('#main-nav button[data-tab]');
+  const activeTab = document.querySelector('#main-nav button.active');
+  if (!activeTab) return;
+  const idx = Array.from(tabs).indexOf(activeTab);
+  let newIdx = idx + direction;
+  if (newIdx < 0) newIdx = tabs.length - 1;
+  if (newIdx >= tabs.length) newIdx = 0;
+  tabs[newIdx].click();
+}
+
+/* ========================
    SETTINGS / EXPORT / IMPORT
    ======================== */
 async function exportDB() {
@@ -3829,6 +3943,7 @@ function initDelegation() {
       if (!listKey) {
         if (target.closest('#ethics-checklist')) listKey = 'ethics';
         else if (target.closest('#personal-risks-checklist')) listKey = 'personal';
+        else if (target.closest('#safety-checklist')) listKey = 'safety';
       }
       toggleCheck(id, listKey);
       return;
@@ -3988,7 +4103,10 @@ async function init() {
     }
   });
 
-  console.log('PWA AI Guide v4.2.3 (Full Integration) initialized');
+  // === СВАЙП-НАВИГАЦИЯ (Фаза 2.0) ===
+  initSwipeNav();
+
+  console.log('PWA AI Guide v4.2.4 (Full Integration) initialized');
 }
 
 /* Исправленная инициализация для Safari iOS */
