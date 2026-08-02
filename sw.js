@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-guide-v3-0-1';
+const CACHE_NAME = 'ai-guide-v3-0-2';
 const PRECACHE_ASSETS = [
   './',
   './index.html'
