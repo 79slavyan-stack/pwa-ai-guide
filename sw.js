@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-guide-v4.2.7';
+const CACHE_NAME = 'ai-guide-v4.3.0';
 const urlsToCache = ['/', '/index.html', '/Icon_512x512.png'];
 
 // 1. Удаляем ВСЕ старые кэши при активации
@@ -21,7 +21,8 @@ self.addEventListener('install', event => {
   );
 });
 
-// 2. Для HTML — сеть первой (всегда свежая версия), для статики — кэш
+// 2. Для HTML — сеть первой (всегда свежая версия)
+// Для статики (иконки) — кэш первой
 self.addEventListener('fetch', event => {
   if (event.request.mode === 'navigate' || event.request.destination === 'document') {
     event.respondWith(
