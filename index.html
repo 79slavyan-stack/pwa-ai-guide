@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self';">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUFdBIEFJIEd1aWRlIiwic2hvcnRfbmFtZSI6IkFJIEd1aWRlIiwic3RhcnRfdXJsIjoiLi8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGIxMDIwIiwidGhlbWVfY29sb3IiOiIjMGYxNzJhIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0Nzdmcge1G1sbnM9JTI3aHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmclMjcgdmlld0JveD0lMjcwIDAgMTkyIDE5MiUyNyUzRSUzQ3JlY3Qgd2lkdGg9JTI3MTkyJTI3IGhlaWdodD0lMjcxOTIlMjcgZmlsbD0lMjclMjMwZjE3MmElMjcgcng9JTI3MjAlMjcvJTNFJTNDY2lyY2xlIGN4PSUyNzk2JTI3IGN5PSUyNzk2JTI3IHI9JTI3NTAlMjcgZmlsbD0lMjclMjM2MGE1ZmElMjcvJTNFJTNDcGF0aCBkPSUyN00xMjggNTZjMC0xNi42LTEzLjQtMzAtMzAtMzBzLTMwIDEzLjQtMzAgMzBjMCAxMi40IDcuNiAyMy4xIDE4LjUgMjcuNS04LjEgNi40LTE4LjUgMTAuNS0zMCAxMC41LTI2LjUgMC00OCAyMS41LTQ4IDQ4czExLjUgNDggNDggNDggNDgtMjEuNSA0OC00OGMwLTExLjUtNC4xLTIyLTEwLjUtMzAuMSA0LjEtOC41IDEwLjUtMTkgMTAuNS0zMC42eiUyNyBmaWxsPSUyNyUyMzhiNWNmNiUyNy8lM0UlM0Mvc3ZnJTNFIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwiLCJwdXJwb3NlIjoiYW55IG1hc2thYmxlIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSUyN2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJTI3IHZpZXdCb3g9JTI3MCAwIDUxMiA1MTIlMjclM0UlM0NyZWN0IHdpZHRoPSUyNzUxMiUyNyBoZWlnaHQ9JTI3NTEyJTI3IGZpbGw9JTI3JTIzMGYxNzJhJTI3IHJ4PSUyNzQwJTI3LyUzRSUzQ2NpcmNsZSBjeD0lMjcyNTYlMjcgY3k9JTI3MjU2JTI3IHI9JTI3MTMwJTI3IGZpbGw9JTI3JTIzNjBhNWZhJTI3LyUzRSUzQ3BhdGggZD0lMjdNMzQwIDE1MGMwLTQzLTM1LTc4LTc4LTc4cy03OCAzNS03OCA3OGMwIDMyIDE5IDU5IDQ2IDcxLTIwIDE2LTQ2IDI2LTc1IDI2LTY2IDAtMTIwIDU0LTEyMCAxMjBzNTQgMTIwIDEyMCAxMjAgMTIwLTU0IDEyMC0xMjBjMC0yOS0xMC01NS0yNi03NSAxMC0yMiAyNi00OSAyNi03OXolMjcgZmlsbD0lMjclMjM4YjVjZjYlMjcvJTNFJTNDL3N2ZyUzRSIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwicHVycG9zZSI6ImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="Icon_512x512.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="PWA AI Guide v4.3.0 — интерактивный карьерный роадмап по работе с ИИ">
+<meta name="description" content="PWA AI Guide v4.3.1 — интерактивный карьерный роадмап по работе с ИИ">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>PWA AI Guide v4.3.0</title>
+<title>PWA AI Guide v4.3.1</title>
 <style>
 /* === RESET & BASE === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -456,7 +456,7 @@ section.active{display:block}
     <svg><use href="#icon-spider"/></svg>
   </div>
   <h1>PWA AI Guide</h1>
-  <span class="version">v4.3.0</span>
+  <span class="version">v4.3.1</span>
 </header>
 
 <!-- NAV (дропдауны) -->
@@ -496,7 +496,7 @@ section.active{display:block}
 <section id="tab-start" class="active">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-rocket"/></svg> Добро пожаловать</h2>
-    <p>PWA AI Guide v4.3.0 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
+    <p>PWA AI Guide v4.3.1 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding:.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <span class="tag tag-blue" id="level-display">Уровень: Новичок (0 XP)</span>
       <span class="tag tag-green" id="streak-display">🔥 Стрик: 0 дней</span>
@@ -538,7 +538,7 @@ section.active{display:block}
   </div>
 
   <div class="card">
-    <h3>Последние обновления v4.3.0</h3>
+    <h3>Последние обновления v4.3.1</h3>
     <ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem;line-height:1.7">
       <li><strong>Рынок</strong> превращён в карту путей развития с реальными цифрами дохода.</li>
       <li><strong>Промт-академия</strong> расширена до 10 практических примеров с разбором.</li>
@@ -1674,7 +1674,7 @@ section.active{display:block}
     <div class="card">
       <h3>О приложении</h3>
       <div class="stat-row"><span class="stat-label">Название</span><span class="stat-value">PWA AI Guide</span></div>
-      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.3.0</span></div>
+      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.3.1</span></div>
       <div class="stat-row"><span class="stat-label">Лицензия</span><span class="stat-value">MIT</span></div>
       <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v3 (9 stores)</span></div>
       <div class="stat-row"><span class="stat-label">Иконка</span><span class="stat-value">Neural Spider</span></div>
@@ -1928,7 +1928,7 @@ section.active{display:block}
 
 <!-- ФУТЕР -->
 <footer class="app-footer">
-  <p>PWA AI Guide v4.3.0 · Работает офлайн · Данные хранятся локально</p>
+  <p>PWA AI Guide v4.3.1 · Работает офлайн · Данные хранятся локально</p>
   <p style="margin-top:.4rem">* — партнёрские ссылки. Мы получаем комиссию от партнёров без дополнительных затрат для вас.</p>
   <p style="margin-top:.4rem">Российские сервисы (GigaChat, Kandinsky, Kwork) рекомендуются приоритетно для аудитории РФ.</p>
   <p style="margin-top:.4rem; font-size:.7rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:.4rem;">
@@ -2120,7 +2120,7 @@ Negative prompt: размытость, лишние пальцы, низкое �
 <!-- =================================================================== -->
 <script>
 /* ========================
-   PWA AI Guide v4.3.0 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash + Module 3
+   PWA AI Guide v4.3.1 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash + Module 3 + Hotfixes
    ======================== */
 
 const DB_NAME = 'AIGuideDB';
@@ -4198,6 +4198,36 @@ function copyPartnerResult(id) {
 
 /* === [MODULE3_END: JS Functions] === */
 
+/* === [HOTFIX_SWIPE_START] === */
+/* Свайп по вкладкам (Android) — v4.3.1 */
+(function(){
+  let startX = 0, startY = 0, endX = 0;
+  const threshold = 60;
+  const exclude = 'INPUT,TEXTAREA,SELECT,.kanban,.kanban-card,.app-nav';
+
+  document.body.addEventListener('touchstart', function(e){
+    if(e.target.closest(exclude)) return;
+    startX = e.changedTouches[0].screenX;
+    startY = e.changedTouches[0].screenY;
+  }, {passive:true});
+
+  document.body.addEventListener('touchend', function(e){
+    if(!startX) return;
+    endX = e.changedTouches[0].screenX;
+    const diffX = endX - startX;
+    const diffY = Math.abs(e.changedTouches[0].screenY - startY);
+    if(Math.abs(diffX) < threshold || diffY > Math.abs(diffX)) return;
+
+    const tabs = Array.from(document.querySelectorAll('#main-nav > li > button[data-tab]'));
+    const active = document.querySelector('#main-nav button.active');
+    const idx = tabs.indexOf(active);
+    if(diffX < 0 && idx < tabs.length - 1) tabs[idx+1].click();
+    if(diffX > 0 && idx > 0) tabs[idx-1].click();
+    startX = 0;
+  }, {passive:true});
+})();
+/* === [HOTFIX_SWIPE_END] === */
+
 /* ========================
    INIT — Загрузка демо-данных
    ======================== */
@@ -4265,7 +4295,7 @@ async function init() {
     if (e.target === document.getElementById('tutorial-modal')) hideTutorial();
   });
 
-  console.log('PWA AI Guide v4.3.0 (Full Integration) initialized');
+  console.log('PWA AI Guide v4.3.1 (Full Integration) initialized');
 }
 
 /* Исправленная инициализация для Safari iOS */
@@ -4283,23 +4313,22 @@ if ('serviceWorker' in navigator) {
 
 <!-- [HOTFIX_SW_START] -->
 <script>
-/* Принудительное обновление SW: если активировался новый — перезагружаем страницу */
+// Принудительная перезагрузка при обновлении SW
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then(function(reg) {
-    reg.addEventListener('updatefound', function() {
-      var newWorker = reg.installing;
-      newWorker.addEventListener('statechange', function() {
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    reg.addEventListener('updatefound', () => {
+      const newWorker = reg.installing;
+      newWorker.addEventListener('statechange', () => {
         if (newWorker.state === 'activated') {
-          var t = document.createElement('div');
-          t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#60a5fa,#8b5cf6);color:#fff;padding:.6rem 1.2rem;border-radius:999px;z-index:200;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.4);font-family:system-ui,sans-serif;white-space:nowrap';
+          // SW обновился — показываем toast и перезагружаем
+          const t = document.createElement('div');
+          t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:.6rem 1.2rem;border-radius:999px;z-index:200;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.4)';
           t.textContent = '🔄 Обновление применено, перезагружаю...';
           document.body.appendChild(t);
-          setTimeout(function(){ location.reload(); }, 1500);
+          setTimeout(() => location.reload(), 1500);
         }
       });
     });
-    // Принудительно проверяем обновление при каждом старте
-    reg.update();
   });
 }
 </script>
