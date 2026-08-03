@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self';">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUFdBIEFJIEd1aWRlIiwic2hvcnRfbmFtZSI6IkFJIEd1aWRlIiwic3RhcnRfdXJsIjoiLi8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGIxMDIwIiwidGhlbWVfY29sb3IiOiIjMGYxNzJhIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9JTI3aHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmclMjcgdmlld0JveD0lMjcwIDAgMTkyIDE5MiUyNyUzRSUzQ3JlY3Qgd2lkdGg9JTI3MTkyJTI3IGhlaWdodD0lMjcxOTIlMjcgZmlsbD0lMjclMjMwZjE3MmElMjcgcng9JTI3MjAlMjcvJTNFJTNDY2lyY2xlIGN4PSUyNzk2JTI3IGN5PSUyNzk2JTI3IHI9JTI3NTAlMjcgZmlsbD0lMjclMjM2MGE1ZmElMjcvJTNFJTNDcGF0aCBkPSUyN00xMjggNTZjMC0xNi42LTEzLjQtMzAtMzAtMzBzLTMwIDEzLjQtMzAgMzBjMCAxMi40IDcuNiAyMy4xIDE4LjUgMjcuNS04LjEgNi40LTE4LjUgMTAuNS0zMCAxMC41LTI2LjUgMC00OCAyMS41LTQ4IDQ4czExLjUgNDggNDggNDggNDgtMjEuNSA0OC00OGMwLTExLjUtNC4xLTIyLTEwLjUtMzAuMSA0LjEtOC41IDEwLjUtMTkgMTAuNS0zMC42eiUyNyBmaWxsPSUyNyUyMzhiNWNmNiUyNy8lM0UlM0Mvc3ZnJTNFIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwiLCJwdXJwb3NlIjoiYW55IG1hc2thYmxlIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSUyN2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJTI3IHZpZXdCb3g9JTI3MCAwIDUxMiA1MTIlMjclM0UlM0NyZWN0IHdpZHRoPSUyNzUxMiUyNyBoZWlnaHQ9JTI3NTEyJTI3IGZpbGw9JTI3JTIzMGYxNzJhJTI3IHJ4PSUyNzQwJTI3LyUzRSUzQ2NpcmNsZSBjeD0lMjcyNTYlMjcgY3k9JTI3MjU2JTI3IHI9JTI3MTMwJTI3IGZpbGw9JTI3JTIzNjBhNWZhJTI3LyUzRSUzQ3BhdGggZD0lMjdNMzQwIDE1MGMwLTQzLTM1LTc4LTc4LTc4cy03OCAzNS03OCA3OGMwIDMyIDE5IDU5IDQ2IDcxLTIwIDE2LTQ2IDI2LTc1IDI2LTY2IDAtMTIwIDU0LTEyMCAxMjBzNTQgMTIwIDEyMCAxMjAgMTIwLTU0IDEyMC0xMjBjMC0yOS0xMC01NS0yNi03NSAxMC0yMiAyNi00OSAyNi03OXolMjcgZmlsbD0lMjclMjM4YjVjZjYlMjcvJTNFJTNDL3N2ZyUzRSIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwicHVycG9zZSI6ImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUFdBIEFJIEd1aWRlIiwic2hvcnRfbmFtZSI6IkFJIEd1aWRlIiwic3RhcnRfdXJsIjoiLi8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGIxMDIwIiwidGhlbWVfY29sb3IiOiIjMGYxNzJhIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0Nzdmcge1G1sbnM9JTI3aHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmclMjcgdmlld0JveD0lMjcwIDAgMTkyIDE5MiUyNyUzRSUzQ3JlY3Qgd2lkdGg9JTI3MTkyJTI3IGhlaWdodD0lMjcxOTIlMjcgZmlsbD0lMjclMjMwZjE3MmElMjcgcng9JTI3MjAlMjcvJTNFJTNDY2lyY2xlIGN4PSUyNzk2JTI3IGN5PSUyNzk2JTI3IHI9JTI3NTAlMjcgZmlsbD0lMjclMjM2MGE1ZmElMjcvJTNFJTNDcGF0aCBkPSUyN00xMjggNTZjMC0xNi42LTEzLjQtMzAtMzAtMzBzLTMwIDEzLjQtMzAgMzBjMCAxMi40IDcuNiAyMy4xIDE4LjUgMjcuNS04LjEgNi40LTE4LjUgMTAuNS0zMCAxMC41LTI2LjUgMC00OCAyMS41LTQ4IDQ4czExLjUgNDggNDggNDggNDgtMjEuNSA0OC00OGMwLTExLjUtNC4xLTIyLTEwLjUtMzAuMSA0LjEtOC41IDEwLjUtMTkgMTAuNS0zMC42eiUyNyBmaWxsPSUyNyUyMzhiNWNmNiUyNy8lM0UlM0Mvc3ZnJTNFIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwiLCJwdXJwb3NlIjoiYW55IG1hc2thYmxlIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSUyN2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJTI3IHZpZXdCb3g9JTI3MCAwIDUxMiA1MTIlMjclM0UlM0NyZWN0IHdpZHRoPSUyNzUxMiUyNyBoZWlnaHQ9JTI3NTEyJTI3IGZpbGw9JTI3JTIzMGYxNzJhJTI3IHJ4PSUyNzQwJTI3LyUzRSUzQ2NpcmNsZSBjeD0lMjcyNTYlMjcgY3k9JTI3MjU2JTI3IHI9JTI3MTMwJTI3IGZpbGw9JTI3JTIzNjBhNWZhJTI3LyUzRSUzQ3BhdGggZD0lMjdNMzQwIDE1MGMwLTQzLTM1LTc4LTc4LTc4cy03OCAzNS03OCA3OGMwIDMyIDE5IDU5IDQ2IDcxLTIwIDE2LTQ2IDI2LTc1IDI2LTY2IDAtMTIwIDU0LTEyMCAxMjBzNTQgMTIwIDEyMCAxMjAgMTIwLTU0IDEyMC0xMjBjMC0yOS0xMC01NS0yNi03NSAxMC0yMiAyNi00OSAyNi03OXolMjcgZmlsbD0lMjclMjM4YjVjZjYlMjcvJTNFJTNDL3N2ZyUzRSIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwicHVycG9zZSI6ImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="apple-touch-icon" href="Icon_512x512.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="PWA AI Guide v4.2.1 — интерактивный карьерный роадмап по работе с ИИ">
+<meta name="description" content="PWA AI Guide v4.2.7 — интерактивный карьерный роадмап по работе с ИИ">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>PWA AI Guide v4.2.1</title>
+<title>PWA AI Guide v4.2.7</title>
 <style>
 /* === RESET & BASE === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -455,7 +456,7 @@ section.active{display:block}
     <svg><use href="#icon-spider"/></svg>
   </div>
   <h1>PWA AI Guide</h1>
-  <span class="version">v4.2.1</span>
+  <span class="version">v4.2.7</span>
 </header>
 
 <!-- NAV (дропдауны) -->
@@ -495,7 +496,7 @@ section.active{display:block}
 <section id="tab-start" class="active">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-rocket"/></svg> Добро пожаловать</h2>
-    <p>PWA AI Guide v4.2.1 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
+    <p>PWA AI Guide v4.2.7 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding:.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <span class="tag tag-blue" id="level-display">Уровень: Новичок (0 XP)</span>
       <span class="tag tag-green" id="streak-display">🔥 Стрик: 0 дней</span>
@@ -537,7 +538,7 @@ section.active{display:block}
   </div>
 
   <div class="card">
-    <h3>Последние обновления v4.2.1</h3>
+    <h3>Последние обновления v4.2.7</h3>
     <ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem;line-height:1.7">
       <li><strong>Рынок</strong> превращён в карту путей развития с реальными цифрами дохода.</li>
       <li><strong>Промт-академия</strong> расширена до 10 практических примеров с разбором.</li>
@@ -1131,16 +1132,7 @@ section.active{display:block}
 
   <!-- Timeline -->
   <div class="sub-panel active" data-panel="timeline">
-    <!-- Вставка патча «Треки — FAB-вводной» -->
-    <div class="card">
-      <div class="fab-block" style="margin-bottom:1rem">
-        <h4>🎨 Трек «Нейро-дизайнер» — ваш путь за 8 шагов</h4>
-        <div class="fab-section what"><strong>ЧТО ДЕЛАТЬ:</strong><p>Пройти 8 практических шагов от первой генерации до масштабирования.</p></div>
-        <div class="fab-section why"><strong>ЗАЧЕМ:</strong><p>Узкая специализация = высокий чек. Дизайнеры с портфолио получают в 3-5 раз больше универсалов.</p></div>
-        <div class="fab-section gain"><strong>ЧТО ПОЛУЧИТЕ:</strong><p>Системный навык, готовое портфолио, первые продажи и понимание, как масштабировать доход.</p></div>
-        <div class="fab-section loss"><strong>ЧТО ПОТЕРЯЕТЕ:</strong><p>Без трека вы будете блуждать месяцами, тратя время на бесполезные туториалы. Через год пожалеете, что не начали системно.</p></div>
-      </div>
-    </div>
+    <!-- Дублирующие FAB-блоки удалены -->
     <div class="card">
       <h3>12-этапный путь</h3>
       <div class="timeline" id="timeline-list">
@@ -1163,16 +1155,7 @@ section.active{display:block}
 
   <!-- SMART -->
   <div class="sub-panel" data-panel="smart">
-    <!-- Вставка патча «Треки — FAB-вводной» -->
-    <div class="card">
-      <div class="fab-block" style="margin-bottom:1rem">
-        <h4>🎨 Трек «Нейро-дизайнер» — ваш путь за 8 шагов</h4>
-        <div class="fab-section what"><strong>ЧТО ДЕЛАТЬ:</strong><p>Пройти 8 практических шагов от первой генерации до масштабирования.</p></div>
-        <div class="fab-section why"><strong>ЗАЧЕМ:</strong><p>Узкая специализация = высокий чек. Дизайнеры с портфолио получают в 3-5 раз больше универсалов.</p></div>
-        <div class="fab-section gain"><strong>ЧТО ПОЛУЧИТЕ:</strong><p>Системный навык, готовое портфолио, первые продажи и понимание, как масштабировать доход.</p></div>
-        <div class="fab-section loss"><strong>ЧТО ПОТЕРЯЕТЕ:</strong><p>Без трека вы будете блуждать месяцами, тратя время на бесполезные туториалы. Через год пожалеете, что не начали системно.</p></div>
-      </div>
-    </div>
+    <!-- Дублирующие FAB-блоки удалены -->
     <div class="card">
       <h3>SMART-цели</h3>
       <div style="display:grid;gap:.5rem;margin-bottom:.8rem">
@@ -1196,16 +1179,7 @@ section.active{display:block}
 
   <!-- SWOT -->
   <div class="sub-panel" data-panel="swot">
-    <!-- Вставка патча «Треки — FAB-вводной» -->
-    <div class="card">
-      <div class="fab-block" style="margin-bottom:1rem">
-        <h4>🎨 Трек «Нейро-дизайнер» — ваш путь за 8 шагов</h4>
-        <div class="fab-section what"><strong>ЧТО ДЕЛАТЬ:</strong><p>Пройти 8 практических шагов от первой генерации до масштабирования.</p></div>
-        <div class="fab-section why"><strong>ЗАЧЕМ:</strong><p>Узкая специализация = высокий чек. Дизайнеры с портфолио получают в 3-5 раз больше универсалов.</p></div>
-        <div class="fab-section gain"><strong>ЧТО ПОЛУЧИТЕ:</strong><p>Системный навык, готовое портфолио, первые продажи и понимание, как масштабировать доход.</p></div>
-        <div class="fab-section loss"><strong>ЧТО ПОТЕРЯЕТЕ:</strong><p>Без трека вы будете блуждать месяцами, тратя время на бесполезные туториалы. Через год пожалеете, что не начали системно.</p></div>
-      </div>
-    </div>
+    <!-- Дублирующие FAB-блоки удалены -->
     <div class="grid-2">
       <div class="card"><h3 style="color:var(--success)">Strengths — Сильные стороны</h3><textarea id="swot-s" placeholder="Что у меня получается лучше всего?" style="min-height:120px"></textarea></div>
       <div class="card"><h3 style="color:var(--danger)">Weaknesses — Слабые стороны</h3><textarea id="swot-w" placeholder="Что тормозит развитие?" style="min-height:120px"></textarea></div>
@@ -1217,16 +1191,7 @@ section.active{display:block}
 
   <!-- KPI -->
   <div class="sub-panel" data-panel="kpi">
-    <!-- Вставка патча «Треки — FAB-вводной» -->
-    <div class="card">
-      <div class="fab-block" style="margin-bottom:1rem">
-        <h4>🎨 Трек «Нейро-дизайнер» — ваш путь за 8 шагов</h4>
-        <div class="fab-section what"><strong>ЧТО ДЕЛАТЬ:</strong><p>Пройти 8 практических шагов от первой генерации до масштабирования.</p></div>
-        <div class="fab-section why"><strong>ЗАЧЕМ:</strong><p>Узкая специализация = высокий чек. Дизайнеры с портфолио получают в 3-5 раз больше универсалов.</p></div>
-        <div class="fab-section gain"><strong>ЧТО ПОЛУЧИТЕ:</strong><p>Системный навык, готовое портфолио, первые продажи и понимание, как масштабировать доход.</p></div>
-        <div class="fab-section loss"><strong>ЧТО ПОТЕРЯЕТЕ:</strong><p>Без трека вы будете блуждать месяцами, тратя время на бесполезные туториалы. Через год пожалеете, что не начали системно.</p></div>
-      </div>
-    </div>
+    <!-- Дублирующие FAB-блоки удалены -->
     <div class="card">
       <h3>KPI — автоматический расчёт</h3>
       <div class="kpi-row">
@@ -1596,7 +1561,7 @@ section.active{display:block}
     <div class="card">
       <h3>О приложении</h3>
       <div class="stat-row"><span class="stat-label">Название</span><span class="stat-value">PWA AI Guide</span></div>
-      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.1</span></div>
+      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.7</span></div>
       <div class="stat-row"><span class="stat-label">Лицензия</span><span class="stat-value">MIT</span></div>
       <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v3 (9 stores)</span></div>
       <div class="stat-row"><span class="stat-label">Иконка</span><span class="stat-value">Neural Spider</span></div>
@@ -1850,7 +1815,7 @@ section.active{display:block}
 
 <!-- ФУТЕР -->
 <footer class="app-footer">
-  <p>PWA AI Guide v4.2.1 · Работает офлайн · Данные хранятся локально</p>
+  <p>PWA AI Guide v4.2.7 · Работает офлайн · Данные хранятся локально</p>
   <p style="margin-top:.4rem">* — партнёрские ссылки. Мы получаем комиссию от партнёров без дополнительных затрат для вас.</p>
   <p style="margin-top:.4rem">Российские сервисы (GigaChat, Kandinsky, Kwork) рекомендуются приоритетно для аудитории РФ.</p>
   <p style="margin-top:.4rem; font-size:.7rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:.4rem;">
@@ -2042,7 +2007,7 @@ Negative prompt: размытость, лишние пальцы, низкое �
 <!-- =================================================================== -->
 <script>
 /* ========================
-   PWA AI Guide v4.2.1 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash
+   PWA AI Guide v4.2.7 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash
    ======================== */
 
 const DB_NAME = 'AIGuideDB';
@@ -3802,7 +3767,19 @@ async function generateTrackFromNiche(nicheId) {
     c.done = false;
     await dbAdd('checks', c);
   }
-  
+
+  // Вставляем FAB-блок перед списком целей
+  const fabHtml = `
+<div class="card" style="margin-bottom:1rem">
+  <div class="fab-block" style="margin-bottom:0">
+    <h4>🎯 ${track.title} — ваш путь за 8 шагов</h4>
+    <div class="fab-section what"><strong>ЧТО ДЕЛАТЬ:</strong><p>Пройти практические шаги от первой работы до масштабирования.</p></div>
+    <div class="fab-section why"><strong>ЗАЧЕМ:</strong><p>Узкая специализация = высокий чек. Специалисты с портфолио получают в 3-5 раз больше универсалов.</p></div>
+    <div class="fab-section gain"><strong>ЧТО ПОЛУЧИТЕ:</strong><p>Системный навык, готовое портфолио, первые продажи и понимание, как масштабировать доход.</p></div>
+    <div class="fab-section loss"><strong>ЧТО ПОТЕРЯЕТЕ:</strong><p>Без трека вы будете блуждать месяцами, тратя время на бесполезные туториалы. Через год пожалеете, что не начали системно.</p></div>
+  </div>
+</div>`;
+
   // Активируем вкладку План
   document.querySelectorAll('#main-nav button').forEach(b => b.classList.remove('active'));
   document.querySelector('button[data-tab="plan"]')?.classList.add('active');
@@ -3815,6 +3792,12 @@ async function generateTrackFromNiche(nicheId) {
   document.querySelectorAll('#tab-plan .sub-panel').forEach(p => p.classList.remove('active'));
   document.querySelector('#tab-plan .sub-panel[data-panel="smart"]')?.classList.add('active');
   
+  // Добавляем FAB-блок в начало контейнера целей
+  const goalsContainer = document.getElementById('goals-list');
+  if (goalsContainer) {
+    goalsContainer.insertAdjacentHTML('afterbegin', fabHtml);
+  }
+
   renderGoals();
   renderChecklist('30d', 'check-30d');
   refreshKPI();
@@ -4069,7 +4052,7 @@ async function init() {
     if (e.target === document.getElementById('tutorial-modal')) hideTutorial();
   });
 
-  console.log('PWA AI Guide v4.2.1 (Full Integration) initialized');
+  console.log('PWA AI Guide v4.2.7 (Full Integration) initialized');
 }
 
 /* Исправленная инициализация для Safari iOS */
