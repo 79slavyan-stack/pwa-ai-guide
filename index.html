@@ -7,10 +7,10 @@
 <link rel="apple-touch-icon" href="Icon_512x512.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="PWA AI Guide v4.2.7 — интерактивный карьерный роадмап по работе с ИИ">
+<meta name="description" content="PWA AI Guide v4.3.0 — интерактивный карьерный роадмап по работе с ИИ">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>PWA AI Guide v4.2.7</title>
+<title>PWA AI Guide v4.3.0</title>
 <style>
 /* === RESET & BASE === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -456,7 +456,7 @@ section.active{display:block}
     <svg><use href="#icon-spider"/></svg>
   </div>
   <h1>PWA AI Guide</h1>
-  <span class="version">v4.2.7</span>
+  <span class="version">v4.3.0</span>
 </header>
 
 <!-- NAV (дропдауны) -->
@@ -496,7 +496,7 @@ section.active{display:block}
 <section id="tab-start" class="active">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-rocket"/></svg> Добро пожаловать</h2>
-    <p>PWA AI Guide v4.2.7 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
+    <p>PWA AI Guide v4.3.0 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding:.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <span class="tag tag-blue" id="level-display">Уровень: Новичок (0 XP)</span>
       <span class="tag tag-green" id="streak-display">🔥 Стрик: 0 дней</span>
@@ -538,7 +538,7 @@ section.active{display:block}
   </div>
 
   <div class="card">
-    <h3>Последние обновления v4.2.7</h3>
+    <h3>Последние обновления v4.3.0</h3>
     <ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem;line-height:1.7">
       <li><strong>Рынок</strong> превращён в карту путей развития с реальными цифрами дохода.</li>
       <li><strong>Промт-академия</strong> расширена до 10 практических примеров с разбором.</li>
@@ -548,6 +548,8 @@ section.active{display:block}
       <li><strong>Команда</strong> — добавлена новая вкладка с бэклогом, очередью модулей и экспортом/импортом состояния в TXT.</li>
       <li><strong>Шаблоны</strong> — готовая подборка текстов для профиля, брифа, холодного письма и договора.</li>
       <li><strong>О проекте</strong> — дополнено реальными кейсами пользователей и дорожной картой.</li>
+      <li><strong>Монетизация</strong> — добавлен калькулятор ценообразования: считает ставку/час и ставку/проект.</li>
+      <li><strong>Промты</strong> — новый AI-напарник: генерация откликов, проверка брифа, шаблоны писем клиентам.</li>
     </ul>
   </div>
 </section>
@@ -704,65 +706,76 @@ section.active{display:block}
   </div>
 </section>
 
-<!-- ====== ПРОМТ-АКАДЕМИЯ ====== -->
+<!-- ====== ПРОМТЫ (Академия, Библиотека, AI-напарник) ====== -->
 <section id="tab-prompts">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-book"/></svg> Промт-академия</h2>
     <p>Изучите структуру эффективных запросов, шаблоны и техники для разных моделей.</p>
   </div>
-  <div class="grid-2">
-    <div class="card">
-      <h3>Формула CRISPE</h3>
-      <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:.6rem">Контекст + Роль + Инструкция + Стиль + Параметры + Примеры</p>
-      <div style="background:var(--bg-card);padding:.8rem;border-radius:.5rem;font-size:.85rem;color:var(--text-dim);font-family:monospace;white-space:pre-wrap">Контекст: пишу пост для Telegram-канала о ИИ
+
+  <!-- [MODULE3_START: Prompts SubTabs] -->
+  <div class="sub-tabs" data-subnav="prompts">
+    <button data-sub="academy" class="active">Академия</button>
+    <button data-sub="library">Библиотека</button>
+    <button data-sub="partner">AI-напарник</button>
+  </div>
+  <!-- [MODULE3_END: Prompts SubTabs] -->
+
+  <!-- [MODULE3_START: Academy Panel] -->
+  <div class="sub-panel active" data-panel="academy">
+    <div class="grid-2">
+      <div class="card">
+        <h3>Формула CRISPE</h3>
+        <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:.6rem">Контекст + Роль + Инструкция + Стиль + Параметры + Примеры</p>
+        <div style="background:var(--bg-card);padding:.8rem;border-radius:.5rem;font-size:.85rem;color:var(--text-dim);font-family:monospace;white-space:pre-wrap">Контекст: пишу пост для Telegram-канала о ИИ
 Роль: ты — эксперт по контент-маркетингу
 Инструкция: напиши 3 варианта заголовка
 Стиль: разговорный, с иронией
 Параметры: до 80 символов каждый
 Пример: "ChatGPT украл мою работу — и я благодарен"</div>
-    </div>
-    <div class="card">
-      <h3>Chain-of-Thought</h3>
-      <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:.6rem">Заставьте модель «думать» шаг за шагом. Добавьте «Давай разберём пошагово» или «Объясни ход мыслей».</p>
-      <div style="background:var(--bg-card);padding:.8rem;border-radius:.5rem;font-size:.85rem;color:var(--text-dim);font-family:monospace;white-space:pre-wrap">Реши задачу пошагово:
+      </div>
+      <div class="card">
+        <h3>Chain-of-Thought</h3>
+        <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:.6rem">Заставьте модель «думать» шаг за шагом. Добавьте «Давай разберём пошагово» или «Объясни ход мыслей».</p>
+        <div style="background:var(--bg-card);padding:.8rem;border-radius:.5rem;font-size:.85rem;color:var(--text-dim);font-family:monospace;white-space:pre-wrap">Реши задачу пошагово:
 1. Определи известные переменные
 2. Выбери формулу
 3. Подставь значения
 4. Проверь результат</div>
+      </div>
+      <div class="card">
+        <h3>Zero-shot vs Few-shot</h3>
+        <p style="font-size:.9rem;color:var(--text-dim)"><strong>Zero-shot</strong> — без примеров, полагаясь на знания модели.<br><strong>Few-shot</strong> — 2-5 примеров ввода-вывода для точности.</p>
+      </div>
+      <div class="card">
+        <h3>Negative Prompting</h3>
+        <p style="font-size:.9rem;color:var(--text-dim)">Для изображений: указывайте, чего <em>не</em> должно быть. Для текста: «Не используй канцеляризмы», «Избегай повторов».</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Zero-shot vs Few-shot</h3>
-      <p style="font-size:.9rem;color:var(--text-dim)"><strong>Zero-shot</strong> — без примеров, полагаясь на знания модели.<br><strong>Few-shot</strong> — 2-5 примеров ввода-вывода для точности.</p>
-    </div>
-    <div class="card">
-      <h3>Negative Prompting</h3>
-      <p style="font-size:.9rem;color:var(--text-dim)">Для изображений: указывайте, чего <em>не</em> должно быть. Для текста: «Не используй канцеляризмы», «Избегай повторов».</p>
-    </div>
-  </div>
 
-  <div class="card">
-    <h3>🔍 Живые примеры с разбором (10 тематик)</h3>
-    <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:1rem">Каждый пример показывает разную структуру промта. Скопируйте и адаптируйте под свою задачу.</p>
-    
-    <div style="display:grid;gap:1rem">
+    <div class="card">
+      <h3>🔍 Живые примеры с разбором (10 тематик)</h3>
+      <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:1rem">Каждый пример показывает разную структуру промта. Скопируйте и адаптируйте под свою задачу.</p>
+      
+      <div style="display:grid;gap:1rem">
 
-      <!-- 1. E-commerce -->
-      <div class="prompt-example">
-        <h4>🛒 E-commerce: описание товара для маркетплейса</h4>
-        <span class="tag tag-blue">CRISPE</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Продаём беспроводные наушники на Ozon, целевая аудитория — студенты 18–25 лет.
+        <!-- 1. E-commerce -->
+        <div class="prompt-example">
+          <h4>🛒 E-commerce: описание товара для маркетплейса</h4>
+          <span class="tag tag-blue">CRISPE</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Продаём беспроводные наушники на Ozon, целевая аудитория — студенты 18–25 лет.
 <span style="color:var(--success)">[Роль]</span> Ты — копирайтер маркетплейса с опытом в электронике.
 <span style="color:var(--warn)">[Инструкция]</span> Напиши описание товара из 5 блоков: заголовок (до 60 симв), 3 буллита преимуществ, SEO-описание (500 симв), 5 характеристик, CTA.
 <span style="color:var(--accent-2)">[Стиль]</span> Энергичный, с эмодзи, без воды.
 <span style="color:var(--accent)">[Параметры]</span> Ключевые слова: TWS, Bluetooth 5.3, шумоподавление.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Контекст задаёт ЦА, роль — экспертизу, инструкция дробит задачу на блоки (модель не упустит часть), параметры — SEO-якоря.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Контекст задаёт ЦА, роль — экспертизу, инструкция дробит задачу на блоки (модель не упустит часть), параметры — SEO-якоря.</div>
+        </div>
 
-      <!-- 2. Код -->
-      <div class="prompt-example">
-        <h4>💻 Код: рефакторинг + документирование legacy</h4>
-        <span class="tag tag-blue">Chain-of-Thought + Role</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — senior Python-разработчик, ментор juniorов.
+        <!-- 2. Код -->
+        <div class="prompt-example">
+          <h4>💻 Код: рефакторинг + документирование legacy</h4>
+          <span class="tag tag-blue">Chain-of-Thought + Role</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — senior Python-разработчик, ментор juniorов.
 <span style="color:var(--success)">[Контекст]</span> Унаследовал скрипт на 200 строк, который парсит CSV. Код работает, но не читается.
 <span style="color:var(--warn)">[Инструкция]</span> 
 1. Проанализируй код и найди 3 главные проблемы читаемости.
@@ -770,27 +783,27 @@ section.active{display:block}
 3. Добавь docstrings и type hints.
 4. Напиши 3 unit-теста на pytest.
 <span style="color:var(--accent-2)">[Стиль]</span> Подробные комментарии, объясняй каждое изменение.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Chain-of-Thought («1. Проанализируй… 2. Отрефактори…») заставляет модель думать последовательно, а не выдавать результат в лоб. Роль senior даёт качество кода на уровне production.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Chain-of-Thought («1. Проанализируй… 2. Отрефактори…») заставляет модель думать последовательно, а не выдавать результат в лоб. Роль senior даёт качество кода на уровне production.</div>
+        </div>
 
-      <!-- 3. HR -->
-      <div class="prompt-example">
-        <h4>🤝 HR: вопросы для собеседования на вакансию</h4>
-        <span class="tag tag-blue">Few-shot</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — HR-директор IT-компании.
+        <!-- 3. HR -->
+        <div class="prompt-example">
+          <h4>🤝 HR: вопросы для собеседования на вакансию</h4>
+          <span class="tag tag-blue">Few-shot</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — HR-директор IT-компании.
 <span style="color:var(--success)">[Задача]</span> Составь 10 вопросов для собеседования на позицию AI-артист (Midjourney/SD).
 <span style="color:var(--warn)">[Формат Few-shot]</span>
 Пример хорошего вопроса: «Покажите портфолио и расскажите, какой промт вы использовали для этой работы и почему?»
 Пример плохого вопроса: «Вы умеете рисовать?»
 <span style="color:var(--accent-2)">[Требования]</span> 5 вопросов — на hard skills (техника промтов, постобработка), 5 — на soft skills (коммуникация с заказчиком, дедлайны).</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Few-shot (примеры хорошего/плохого) калибрует модель на нужную глубину. Без примеров ИИ дал бы общие вопросы из Google.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Few-shot (примеры хорошего/плохого) калибрует модель на нужную глубину. Без примеров ИИ дал бы общие вопросы из Google.</div>
+        </div>
 
-      <!-- 4. Email-маркетинг -->
-      <div class="prompt-example">
-        <h4>📧 Email-маркетинг: welcome-цепочка</h4>
-        <span class="tag tag-blue">CRISPE + Персона</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Пользователь скачал бесплатный гайд по промтам с лендинга. Нужна цепочка из 3 писем.
+        <!-- 4. Email-маркетинг -->
+        <div class="prompt-example">
+          <h4>📧 Email-маркетинг: welcome-цепочка</h4>
+          <span class="tag tag-blue">CRISPE + Персона</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Пользователь скачал бесплатный гайд по промтам с лендинга. Нужна цепочка из 3 писем.
 <span style="color:var(--success)">[Роль]</span> Ты — email-маркетолог с конверсией в ниши инфопродуктов 15%+.
 <span style="color:var(--warn)">[Инструкция]</span> 
 Письмо 1 (сразу): благодарность + ссылка на гайд + 1 ценный совет (без продажи).
@@ -798,23 +811,23 @@ section.active{display:block}
 Письмо 3 (через 4 дня): FAQ + ограниченное по времени предложение (скидка 20% до пятницы).
 <span style="color:var(--accent-2)">[Стиль]</span> Дружелюбный, как письмо от старшего друга. Короткие абзацы, смайлы умеренно.
 <span style="color:var(--accent)">[Параметры]</span> Тема письма — до 50 символов. CTA-кнопка — яркая, 1 на письмо.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Структура писем по номерам — это инструкция с контрольными точками. Модель не смешает цели писем в кашу.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Структура писем по номерам — это инструкция с контрольными точками. Модель не смешает цели писем в кашу.</div>
+        </div>
 
-      <!-- 5. Арт / 3D -->
-      <div class="prompt-example">
-        <h4>🎨 Арт: концепт-арт персонажа для игры</h4>
-        <span class="tag tag-blue">Negative Prompt + Параметры</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Промт]</span> Concept art of a cyberpunk female hacker, age 22, asymmetrical undercut with neon-blue hair strands, wearing a holographic bomber jacket, sitting in a cluttered apartment with 3 monitors, warm/cold contrast lighting, cinematic composition, rule of thirds, highly detailed, 8k, artstation trending, unreal engine 5 render style
+        <!-- 5. Арт / 3D -->
+        <div class="prompt-example">
+          <h4>🎨 Арт: концепт-арт персонажа для игры</h4>
+          <span class="tag tag-blue">Negative Prompt + Параметры</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Промт]</span> Concept art of a cyberpunk female hacker, age 22, asymmetrical undercut with neon-blue hair strands, wearing a holographic bomber jacket, sitting in a cluttered apartment with 3 monitors, warm/cold contrast lighting, cinematic composition, rule of thirds, highly detailed, 8k, artstation trending, unreal engine 5 render style
 <span style="color:var(--danger)">[Negative Prompt]</span> blurry, lowres, bad anatomy, extra fingers, mutated hands, poorly drawn face, watermark, signature, text, logo, cropped, worst quality, jpeg artifacts, duplicate, ugly</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Для изображений критичны: точное описание внешности (асимметричный андеркат), освещение (warm/cold contrast), композиция (rule of thirds) и обширный negative prompt — без него модель генерирует артефакты.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Для изображений критичны: точное описание внешности (асимметричный андеркат), освещение (warm/cold contrast), композиция (rule of thirds) и обширный negative prompt — без него модель генерирует артефакты.</div>
+        </div>
 
-      <!-- 6. Аналитика -->
-      <div class="prompt-example">
-        <h4>📊 Аналитика: суммаризация отчёта для руководителя</h4>
-        <span class="tag tag-blue">Chain-of-Thought + Формат вывода</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — стратегический аналитик, готовящий выжимку для СОО.
+        <!-- 6. Аналитика -->
+        <div class="prompt-example">
+          <h4>📊 Аналитика: суммаризация отчёта для руководителя</h4>
+          <span class="tag tag-blue">Chain-of-Thought + Формат вывода</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — стратегический аналитик, готовящий выжимку для СОО.
 <span style="color:var(--success)">[Контекст]</span> Ниже отчёт отдела маркетинга за квартал (вставьте текст отчёта).
 <span style="color:var(--warn)">[Инструкция]</span> 
 1. Прочитай отчёт и выдели 3 ключевых достижения.
@@ -822,14 +835,14 @@ section.active{display:block}
 3. Сформулируй 3 рекомендации с приоритетом High/Medium/Low.
 4. Дай прогноз на следующий квартал в 2 предложения.
 <span style="color:var(--accent-2)">[Формат]</span> Итоговый документ — не более 1 страницы A4. Используй маркированные списки, без воды.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Формат «1. Достигнуто… 2. Проблемы… 3. Рекомендации…» превращает LLM в структурированный аналитический инструмент, а не генератор текста.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Формат «1. Достигнуто… 2. Проблемы… 3. Рекомендации…» превращает LLM в структурированный аналитический инструмент, а не генератор текста.</div>
+        </div>
 
-      <!-- 7. Копирайтинг: Лендинг для SaaS -->
-      <div class="prompt-example">
-        <h4>🌐 Копирайтинг: структура лендинга для SaaS (AIDA)</h4>
-        <span class="tag tag-blue">Инструкция + Параметры</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — копирайтер с специализацией на SaaS-продуктах.
+        <!-- 7. Копирайтинг: Лендинг для SaaS -->
+        <div class="prompt-example">
+          <h4>🌐 Копирайтинг: структура лендинга для SaaS (AIDA)</h4>
+          <span class="tag tag-blue">Инструкция + Параметры</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Роль]</span> Ты — копирайтер с специализацией на SaaS-продуктах.
 <span style="color:var(--success)">[Контекст]</span> Продаём AI-сервис для генерации видео-контента. ЦА: маркетологи, SMM-менеджеры.
 <span style="color:var(--warn)">[Инструкция]</span> Напиши структуру лендинга по модели AIDA (Attention, Interest, Desire, Action). 
 В каждом блоке укажи:
@@ -837,57 +850,120 @@ section.active{display:block}
 - 2 подзаголовка для усиления
 - CTA-фразу.
 <span style="color:var(--accent-2)">[Стиль]</span> Энергичный, цифры и результаты в каждом блоке.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> AIDA — классическая маркетинговая воронка. Инструкция заставляет ИИ следовать этой логике, делая лендинг продающим, а не просто информационным.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> AIDA — классическая маркетинговая воронка. Инструкция заставляет ИИ следовать этой логике, делая лендинг продающим, а не просто информационным.</div>
+        </div>
 
-      <!-- 8. Образование: План урока -->
-      <div class="prompt-example">
-        <h4>🧑‍🏫 Образование: сценарий урока для учителя</h4>
-        <span class="tag tag-blue">CRISPE + Роль</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Нужен план вводного урока по нейросетям для учеников 8 класса.
+        <!-- 8. Образование: План урока -->
+        <div class="prompt-example">
+          <h4>🧑‍🏫 Образование: сценарий урока для учителя</h4>
+          <span class="tag tag-blue">CRISPE + Роль</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Нужен план вводного урока по нейросетям для учеников 8 класса.
 <span style="color:var(--success)">[Роль]</span> Ты — педагог-методист по информатике.
 <span style="color:var(--warn)">[Инструкция]</span> Составь план на 30 минут: разминка (5 мин), теория (10 мин), практика с запуском простой нейросети (10 мин), интерактивная викторина (5 мин).
 <span style="color:var(--accent-2)">[Параметры]</span> Количество учеников — 20. Уровень — нулевой.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Чёткое распределение времени и ролей позволяет модели выдать готовый к применению сценарий, а не абстрактные размышления на тему.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Чёткое распределение времени и ролей позволяет модели выдать готовый к применению сценарий, а не абстрактные размышления на тему.</div>
+        </div>
 
-      <!-- 9. SEO: Статья для блога -->
-      <div class="prompt-example">
-        <h4>📈 SEO-текст: статья для блога с ключевыми словами</h4>
-        <span class="tag tag-blue">Инструкция + Параметры</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Нужна статья для блога о том, как AI помогает в написании кода. Тема: "5 способов использовать ChatGPT в работе разработчика".
+        <!-- 9. SEO: Статья для блога -->
+        <div class="prompt-example">
+          <h4>📈 SEO-текст: статья для блога с ключевыми словами</h4>
+          <span class="tag tag-blue">Инструкция + Параметры</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Нужна статья для блога о том, как AI помогает в написании кода. Тема: "5 способов использовать ChatGPT в работе разработчика".
 <span style="color:var(--success)">[Инструкция]</span> Напиши статью на 1000 слов. 
 - H1: должен содержать ключевик "AI для программистов".
 - H2: разделить каждый способ (5 разделов).
 - Введение и вывод.
 - Список литературы.
 <span style="color:var(--accent-2)">[Стиль]</span> Экспертный, но без занудства. Примеры кода.</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Инструкция содержит SEO-требования (ключевики, структура), что позволяет получить оптимизированную для поиска статью, готовую к публикации без переработки.</div>
-      </div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Инструкция содержит SEO-требования (ключевики, структура), что позволяет получить оптимизированную для поиска статью, готовую к публикации без переработки.</div>
+        </div>
 
-      <!-- 10. Дизайн: UI-макет в Figma (описание) -->
-      <div class="prompt-example">
-        <h4>🎨 Дизайн: генерация UI-макета в Figma (промт для плагина)</h4>
-        <span class="tag tag-blue">Контекст + Инструкция</span>
-        <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Генерация лендинга для мобильного приложения доставки еды.
+        <!-- 10. Дизайн: UI-макет в Figma (описание) -->
+        <div class="prompt-example">
+          <h4>🎨 Дизайн: генерация UI-макета в Figma (промт для плагина)</h4>
+          <span class="tag tag-blue">Контекст + Инструкция</span>
+          <pre style="background:var(--bg-elev);padding:.8rem;border-radius:.4rem;font-size:.8rem;color:var(--text-dim);white-space:pre-wrap;margin:.5rem 0"><span style="color:var(--accent)">[Контекст]</span> Генерация лендинга для мобильного приложения доставки еды.
 <span style="color:var(--success)">[Инструкция]</span> Создай дизайн главного экрана приложения. Элементы: поиск, категории (пицца, бургеры, суши), список рекомендаций, кнопка "Оформить заказ".
 <span style="color:var(--accent-2)">[Стиль]</span> Минимализм, цвета — оранжевый и белый, шрифт — Inter. 
 <span style="color:var(--accent)">[Параметры]</span> Размер экрана 390x844 (iPhone 14).</pre>
-        <div class="prompt-meta"><strong>Разбор:</strong> Промт полностью описывает структуру, стиль и технические параметры экрана. Используется в плагинах Figma (например, Galaxy AI) для генерации слоев автоматически.</div>
+          <div class="prompt-meta"><strong>Разбор:</strong> Промт полностью описывает структуру, стиль и технические параметры экрана. Используется в плагинах Figma (например, Galaxy AI) для генерации слоев автоматически.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- [MODULE3_END: Academy Panel] -->
+
+  <!-- [MODULE3_START: Library Panel] -->
+  <div class="sub-panel" data-panel="library">
+    <div class="card">
+      <h3>Библиотека промтов</h3>
+      <div id="prompts-list"></div>
+      <div style="display:flex;gap:.5rem;margin-top:.8rem">
+        <input type="text" id="prompt-title" placeholder="Название промта">
+        <button class="btn btn-primary" id="btn-add-prompt"><svg width="16" height="16"><use href="#icon-plus"/></svg> Добавить</button>
+      </div>
+      <textarea id="prompt-body" placeholder="Текст промта..." style="margin-top:.5rem;height:80px"></textarea>
+    </div>
+  </div>
+  <!-- [MODULE3_END: Library Panel] -->
+
+  <!-- [MODULE3_START: AI Partner] -->
+  <div class="sub-panel" data-panel="partner">
+    <div class="card">
+      <h3>🤖 AI-напарник — помощь в работе с клиентами</h3>
+      <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:1rem">Вставьте текст заказа, бриф или опишите ситуацию — получите готовый шаблон ответа. Всё обрабатывается локально, данные никуда не уходят.</p>
+
+      <div class="sub-tabs" data-subnav="partner-modes" style="margin-bottom:1rem">
+        <button data-sub="reply" class="active">Отклик на заказ</button>
+        <button data-sub="brief-check">Проверка брифа</button>
+        <button data-sub="letter">Письмо клиенту</button>
       </div>
 
-    </div>
-  </div>
+      <div class="sub-panel active" data-panel="reply">
+        <label style="font-size:.85rem;color:var(--text-dim)">Текст заказа с биржи</label>
+        <textarea id="partner-order-text" placeholder="Вставьте описание заказа..." style="min-height:100px;margin:.4rem 0"></textarea>
+        <label style="font-size:.85rem;color:var(--text-dim)">Ваша ниша / навыки (кратко)</label>
+        <input type="text" id="partner-skills" placeholder="Например: Midjourney, логотипы, SMM" style="margin:.4rem 0">
+        <button class="btn btn-primary" onclick="generatePartnerReply()" style="width:100%;margin:.4rem 0">Сгенерировать отклик</button>
+        <div id="partner-reply-result" style="display:none;background:var(--bg-card);padding:1rem;border-radius:.5rem;margin-top:.5rem">
+          <h4 style="color:var(--accent);margin-bottom:.4rem">Готовый отклик:</h4>
+          <pre id="partner-reply-text" style="white-space:pre-wrap;font-size:.9rem;color:var(--text-dim)"></pre>
+          <button class="btn btn-sm btn-secondary" onclick="copyPartnerResult('partner-reply-text')" style="margin-top:.4rem">📋 Копировать</button>
+        </div>
+      </div>
 
-  <div class="card">
-    <h3>Библиотека промтов</h3>
-    <div id="prompts-list"></div>
-    <div style="display:flex;gap:.5rem;margin-top:.8rem">
-      <input type="text" id="prompt-title" placeholder="Название промта">
-      <button class="btn btn-primary" id="btn-add-prompt"><svg width="16" height="16"><use href="#icon-plus"/></svg> Добавить</button>
+      <div class="sub-panel" data-panel="brief-check">
+        <label style="font-size:.85rem;color:var(--text-dim)">Текст брифа клиента</label>
+        <textarea id="partner-brief-text" placeholder="Вставьте текст брифа..." style="min-height:100px;margin:.4rem 0"></textarea>
+        <button class="btn btn-primary" onclick="generateBriefCheck()" style="width:100%;margin:.4rem 0">Проверить бриф</button>
+        <div id="partner-brief-result" style="display:none;background:var(--bg-card);padding:1rem;border-radius:.5rem;margin-top:.5rem">
+          <h4 style="color:var(--accent);margin-bottom:.4rem">Анализ брифа:</h4>
+          <div id="partner-brief-text-result"></div>
+        </div>
+      </div>
+
+      <div class="sub-panel" data-panel="letter">
+        <label style="font-size:.85rem;color:var(--text-dim)">Ситуация</label>
+        <select id="partner-letter-scenario" style="margin:.4rem 0">
+          <option value="deadline">Перенос дедлайна</option>
+          <option value="prepay">Запрос предоплаты</option>
+          <option value="edits">Ограничение правок</option>
+          <option value="clarify">Уточнение ТЗ</option>
+        </select>
+        <label style="font-size:.85rem;color:var(--text-dim)">Детали (кратко)</label>
+        <input type="text" id="partner-letter-details" placeholder="Например: клиент просит сделать за 2 дня вместо 5" style="margin:.4rem 0">
+        <button class="btn btn-primary" onclick="generatePartnerLetter()" style="width:100%;margin:.4rem 0">Составить письмо</button>
+        <div id="partner-letter-result" style="display:none;background:var(--bg-card);padding:1rem;border-radius:.5rem;margin-top:.5rem">
+          <h4 style="color:var(--accent);margin-bottom:.4rem">Готовое письмо:</h4>
+          <pre id="partner-letter-text" style="white-space:pre-wrap;font-size:.9rem;color:var(--text-dim)"></pre>
+          <button class="btn btn-sm btn-secondary" onclick="copyPartnerResult('partner-letter-text')" style="margin-top:.4rem">📋 Копировать</button>
+        </div>
+      </div>
     </div>
-    <textarea id="prompt-body" placeholder="Текст промта..." style="margin-top:.5rem;height:80px"></textarea>
   </div>
+  <!-- [MODULE3_END: AI Partner] -->
+
 </section>
 
 <!-- ====== ИНСТРУМЕНТЫ ====== -->
@@ -908,7 +984,7 @@ section.active{display:block}
   <div class="grid-2" id="platforms-grid"></div>
 </section>
 
-<!-- ====== МОНЕТИЗАЦИЯ ====== -->
+<!-- ====== МОНЕТИЗАЦИЯ (с Калькулятором) ====== -->
 <section id="tab-monetize">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-coin"/></svg> Монетизация и продажи</h2>
@@ -919,6 +995,7 @@ section.active{display:block}
     <button data-sub="pricing">Ценообразование</button>
     <button data-sub="marketing">Маркетинг</button>
     <button data-sub="negotiate">Переговоры</button>
+    <button data-sub="calculator">Калькулятор</button>
   </div>
   
   <div class="sub-panel active" data-panel="models">
@@ -1047,6 +1124,42 @@ section.active{display:block}
   <div class="sub-panel" data-panel="negotiate">
     <div class="card"><h3>Переговоры</h3><ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem"><li>Всегда запрашивайте бриф</li><li>Фиксируйте количество правок (2-3 бесплатные)</li><li>Предоплата 50% для новых клиентов</li><li>Используйте контракт для заказов от $200</li></ul></div>
   </div>
+
+  <!-- [MODULE3_START: Calculator] -->
+  <div class="sub-panel" data-panel="calculator">
+    <div class="card">
+      <div class="fab-block" style="margin-bottom:1rem">
+        <h4>💡 Как пользоваться калькулятором</h4>
+        <div class="fab-section what"><strong>ЧТО ДЕЛАТЬ:</strong><p>Введите желаемый месячный доход, количество рабочих часов в неделю и процент налогов.</p></div>
+        <div class="fab-section why"><strong>ЗАЧЕМ:</strong><p>Новички часто недооценивают себя. Калькулятор переводит мышление из «сколько хочу за час» в «какую ценность приношу».</p></div>
+        <div class="fab-section gain"><strong>ЧТО ПОЛУЧИТЕ:</strong><p>Обоснованную цифру для переговоров. Защита от демпинга и выгорания.</p></div>
+        <div class="fab-section loss"><strong>ЧТО ПОТЕРЯЕТЕ:</strong><p>Без расчёта вы либо согласитесь на невыгодные условия, либо завысите цену и потеряете клиента.</p></div>
+      </div>
+      <h3>🧮 Калькулятор ценообразования</h3>
+      <p style="font-size:.9rem;color:var(--text-dim);margin-bottom:1rem">Рассчитайте часовую ставку исходя из желаемого дохода. Формула учитывает налоги, простои и неоплачиваемое время.</p>
+      <div class="grid-2">
+        <div>
+          <label style="font-size:.85rem;color:var(--text-dim)">Желаемый доход в месяц (₽)</label>
+          <input type="number" id="calc-income" placeholder="100000" style="margin-bottom:.6rem">
+          <label style="font-size:.85rem;color:var(--text-dim)">Рабочих часов в неделю</label>
+          <input type="number" id="calc-hours" placeholder="20" style="margin-bottom:.6rem">
+          <label style="font-size:.85rem;color:var(--text-dim)">Налоги и расходы (%)</label>
+          <input type="number" id="calc-tax" placeholder="6" value="6" style="margin-bottom:.6rem">
+          <button class="btn btn-primary" onclick="calculatePrice()" style="width:100%">Рассчитать</button>
+        </div>
+        <div class="card" style="background:var(--bg-card);margin-bottom:0">
+          <h4>Результат</h4>
+          <div class="stat-row"><span class="stat-label">Ставка / час</span><span class="stat-value" id="res-hour">—</span></div>
+          <div class="stat-row"><span class="stat-label">Ставка / день (8ч)</span><span class="stat-value" id="res-day">—</span></div>
+          <div class="stat-row"><span class="stat-label">Ставка / проект (10ч)</span><span class="stat-value" id="res-project">—</span></div>
+          <div class="stat-row"><span class="stat-label">С учётом налогов</span><span class="stat-value" id="res-total">—</span></div>
+          <p style="font-size:.75rem;color:var(--text-dim);margin-top:.6rem">Формула: (Доход × 1.3) / (Часы × 4.3). Коэффициент 1.3 — запас на простои и непредвиденные расходы.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [MODULE3_END: Calculator] -->
+
 </section>
 
 <!-- ====== МОИ РАБОТЫ (CRM с канбаном и DnD) ====== -->
@@ -1561,7 +1674,7 @@ section.active{display:block}
     <div class="card">
       <h3>О приложении</h3>
       <div class="stat-row"><span class="stat-label">Название</span><span class="stat-value">PWA AI Guide</span></div>
-      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.2.7</span></div>
+      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.3.0</span></div>
       <div class="stat-row"><span class="stat-label">Лицензия</span><span class="stat-value">MIT</span></div>
       <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v3 (9 stores)</span></div>
       <div class="stat-row"><span class="stat-label">Иконка</span><span class="stat-value">Neural Spider</span></div>
@@ -1815,7 +1928,7 @@ section.active{display:block}
 
 <!-- ФУТЕР -->
 <footer class="app-footer">
-  <p>PWA AI Guide v4.2.7 · Работает офлайн · Данные хранятся локально</p>
+  <p>PWA AI Guide v4.3.0 · Работает офлайн · Данные хранятся локально</p>
   <p style="margin-top:.4rem">* — партнёрские ссылки. Мы получаем комиссию от партнёров без дополнительных затрат для вас.</p>
   <p style="margin-top:.4rem">Российские сервисы (GigaChat, Kandinsky, Kwork) рекомендуются приоритетно для аудитории РФ.</p>
   <p style="margin-top:.4rem; font-size:.7rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:.4rem;">
@@ -2007,7 +2120,7 @@ Negative prompt: размытость, лишние пальцы, низкое �
 <!-- =================================================================== -->
 <script>
 /* ========================
-   PWA AI Guide v4.2.7 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash
+   PWA AI Guide v4.3.0 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash + Module 3
    ======================== */
 
 const DB_NAME = 'AIGuideDB';
@@ -3985,6 +4098,106 @@ function copyTemplate(id) {
   });
 }
 
+/* === [MODULE3_START: JS Functions] === */
+
+function calculatePrice() {
+  const income = parseFloat(document.getElementById('calc-income').value) || 0;
+  const hours = parseFloat(document.getElementById('calc-hours').value) || 0;
+  const tax = parseFloat(document.getElementById('calc-tax').value) || 0;
+
+  if (!income || !hours) { toast('Заполните доход и часы', 'warn'); return; }
+
+  const hourRate = (income * 1.3) / (hours * 4.3);
+  const dayRate = hourRate * 8;
+  const projectRate = hourRate * 10;
+  const totalRate = hourRate * (1 + tax/100);
+
+  document.getElementById('res-hour').textContent = Math.round(hourRate).toLocaleString('ru-RU') + ' ₽';
+  document.getElementById('res-day').textContent = Math.round(dayRate).toLocaleString('ru-RU') + ' ₽';
+  document.getElementById('res-project').textContent = Math.round(projectRate).toLocaleString('ru-RU') + ' ₽';
+  document.getElementById('res-total').textContent = Math.round(totalRate).toLocaleString('ru-RU') + ' ₽';
+
+  addXP(5, 'Расчёт ценообразования');
+}
+
+function generatePartnerReply() {
+  const order = document.getElementById('partner-order-text').value.trim();
+  const skills = document.getElementById('partner-skills').value.trim();
+  if (!order) { toast('Вставьте текст заказа', 'warn'); return; }
+
+  const templates = [
+    `Здравствуйте! Заинтересовал ваш заказ. У меня есть опыт в ${skills || 'этой сфере'}. Готов обсудить детали и приступить в ближайшее время. Моё портфолио: [ссылка]. Срок и стоимость уточню после брифа.`,
+    `Добрый день! Выполню задачу качественно и в срок. Работаю с ${skills || 'похожими проектами'}. Предлагаю обсудить детали в личных сообщениях для точной оценки.`,
+    `Приветствую! Ознакомился с ТЗ. Мой подход: 1) бриф 2) концепт 3) доработка. ${skills ? 'Ключевые навыки: ' + skills + '.' : ''} Готов начать сегодня.`
+  ];
+  const result = templates[Math.floor(Math.random() * templates.length)];
+
+  document.getElementById('partner-reply-text').textContent = result;
+  document.getElementById('partner-reply-result').style.display = 'block';
+  addXP(5, 'Сгенерирован отклик');
+}
+
+function generateBriefCheck() {
+  const brief = document.getElementById('partner-brief-text').value.trim();
+  if (!brief) { toast('Вставьте текст брифа', 'warn'); return; }
+
+  const checks = [
+    {text: 'Чёткое описание задачи', ok: brief.length > 100},
+    {text: 'Указаны сроки', ok: /срок|дедлайн|до\s*\d|в течение/i.test(brief)},
+    {text: 'Указан бюджет', ok: /бюджет|стоимость|оплата|\d+\s*₽|\$\d+/i.test(brief)},
+    {text: 'Есть референсы', ok: /пример|референс|по образцу|как у/i.test(brief)},
+    {text: 'Описана целевая аудитория', ok: /аудитория|целевая|для кого|клиент/i.test(brief)},
+    {text: 'Указан формат сдачи', ok: /формат|jpg|png|pdf|psd|исходник/i.test(brief)}
+  ];
+
+  const missing = checks.filter(c => !c.ok).map(c => '• ' + c.text);
+  const present = checks.filter(c => c.ok).map(c => '✓ ' + c.text);
+
+  let html = '<div style="margin-bottom:.6rem"><strong style="color:var(--success)">Что есть в брифе:</strong><br>' + present.join('<br>') + '</div>';
+  if (missing.length) {
+    html += '<div><strong style="color:var(--warn)">Чего не хватает (риски):</strong><br>' + missing.join('<br>') + '</div>';
+    html += '<p style="font-size:.85rem;color:var(--text-dim);margin-top:.4rem">⚠️ Рекомендуем запросить недостающую информацию до начала работы, чтобы избежать конфликтов.</p>';
+  } else {
+    html += '<p style="font-size:.85rem;color:var(--success);margin-top:.4rem">✅ Бриф полный. Можно приступать к оценке сроков и стоимости.</p>';
+  }
+
+  document.getElementById('partner-brief-text-result').innerHTML = html;
+  document.getElementById('partner-brief-result').style.display = 'block';
+  addXP(5, 'Проверен бриф');
+}
+
+function generatePartnerLetter() {
+  const scenario = document.getElementById('partner-letter-scenario').value;
+  const details = document.getElementById('partner-letter-details').value.trim();
+
+  const templates = {
+    deadline: `Здравствуйте! По вашему проекту нужно уточнить сроки. ${details ? 'Учитывая, что ' + details + ', ' : ''}для качественного результата мне потребуется [X дней]. Готов ускориться, но это повлияет на стоимость (+20%). Давайте обсудим компромиссный вариант.`,
+    prepay: `Добрый день! Перед стартом работы стандартно работаю по предоплате 50%. Это позволяет мне забронировать время под ваш проект и гарантирует обоюдную заинтересованность. Реквизиты отправлю после согласования.`,
+    edits: `Здравствуйте! В стоимость включено 2 раунда правок. Дальнейшие доработки оплачиваются отдельно (X ₽/час). Это стандартная практика, которая позволяет нам сфокусироваться на качестве на каждом этапе.`,
+    clarify: `Приветствую! Для точной оценки мне нужно уточнить пару моментов: [вопрос 1], [вопрос 2]. Без этих деталей результат может отличаться от ожиданий, поэтому лучше обсудить заранее.`
+  };
+
+  document.getElementById('partner-letter-text').textContent = templates[scenario] || templates.deadline;
+  document.getElementById('partner-letter-result').style.display = 'block';
+  addXP(5, 'Составлено письмо');
+}
+
+function copyPartnerResult(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.textContent).then(() => toast('Скопировано')).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = el.textContent;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    toast('Скопировано');
+  });
+}
+
+/* === [MODULE3_END: JS Functions] === */
+
 /* ========================
    INIT — Загрузка демо-данных
    ======================== */
@@ -4052,7 +4265,7 @@ async function init() {
     if (e.target === document.getElementById('tutorial-modal')) hideTutorial();
   });
 
-  console.log('PWA AI Guide v4.2.7 (Full Integration) initialized');
+  console.log('PWA AI Guide v4.3.0 (Full Integration) initialized');
 }
 
 /* Исправленная инициализация для Safari iOS */
@@ -4067,6 +4280,30 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 </script>
+
+<!-- [HOTFIX_SW_START] -->
+<script>
+/* Принудительное обновление SW: если активировался новый — перезагружаем страницу */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then(function(reg) {
+    reg.addEventListener('updatefound', function() {
+      var newWorker = reg.installing;
+      newWorker.addEventListener('statechange', function() {
+        if (newWorker.state === 'activated') {
+          var t = document.createElement('div');
+          t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#60a5fa,#8b5cf6);color:#fff;padding:.6rem 1.2rem;border-radius:999px;z-index:200;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.4);font-family:system-ui,sans-serif;white-space:nowrap';
+          t.textContent = '🔄 Обновление применено, перезагружаю...';
+          document.body.appendChild(t);
+          setTimeout(function(){ location.reload(); }, 1500);
+        }
+      });
+    });
+    // Принудительно проверяем обновление при каждом старте
+    reg.update();
+  });
+}
+</script>
+<!-- [HOTFIX_SW_END] -->
 
 </body>
 </html>
