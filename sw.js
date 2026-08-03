@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-guide-v4.2.1';
+const CACHE_NAME = 'ai-guide-v4.2.7';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -6,10 +6,15 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
   );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', event => {
