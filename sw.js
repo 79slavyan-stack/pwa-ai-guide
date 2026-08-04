@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-guide-v4.3.1';
+const CACHE_NAME = 'ai-guide-v4.3.2';
 const urlsToCache = ['/', '/index.html', '/manifest.json', '/Icon_512x512.png'];
 
 self.addEventListener('install', event => {
