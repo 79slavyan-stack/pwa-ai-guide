@@ -7,10 +7,10 @@
 <link rel="apple-touch-icon" href="Icon_512x512.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="PWA AI Guide v4.3.1 — интерактивный карьерный роадмап по работе с ИИ">
+<meta name="description" content="PWA AI Guide v4.3.2 — интерактивный карьерный роадмап по работе с ИИ">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>PWA AI Guide v4.3.1</title>
+<title>PWA AI Guide v4.3.2</title>
 <style>
 /* === RESET & BASE === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -221,6 +221,12 @@ img,svg{max-width:100%;display:block}
 /* === NAV (дропдауны) === */
 .app-nav{position:sticky;top:53px;z-index:40;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .app-nav::-webkit-scrollbar{display:none}
+/* === [NAV_FIX_START] === */
+.app-nav{position:relative}
+.app-nav::before,.app-nav::after{content:"";position:absolute;top:0;bottom:0;width:24px;z-index:41;pointer-events:none}
+.app-nav::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.app-nav::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+/* === [NAV_FIX_END] === */
 .app-nav ul{display:flex;gap:.25rem;padding:.4rem .6rem;list-style:none;min-width:max-content;align-items:center}
 .app-nav ul li{position:relative}
 .app-nav ul li>button{padding:.45rem .7rem;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--text-dim);white-space:nowrap;transition:.2s;background:none;border:none}
@@ -456,7 +462,7 @@ section.active{display:block}
     <svg><use href="#icon-spider"/></svg>
   </div>
   <h1>PWA AI Guide</h1>
-  <span class="version">v4.3.1</span>
+  <span class="version">v4.3.2</span>
 </header>
 
 <!-- NAV (дропдауны) -->
@@ -496,7 +502,7 @@ section.active{display:block}
 <section id="tab-start" class="active">
   <div class="card">
     <h2><svg width="20" height="20"><use href="#icon-rocket"/></svg> Добро пожаловать</h2>
-    <p>PWA AI Guide v4.3.1 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
+    <p>PWA AI Guide v4.3.2 — ваш персональный наставник по работе с генеративным ИИ в российских реалиях. Приложение адаптировано под особенности правового и финансового поля РФ.</p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem;padding:.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <span class="tag tag-blue" id="level-display">Уровень: Новичок (0 XP)</span>
       <span class="tag tag-green" id="streak-display">🔥 Стрик: 0 дней</span>
@@ -538,7 +544,7 @@ section.active{display:block}
   </div>
 
   <div class="card">
-    <h3>Последние обновления v4.3.1</h3>
+    <h3>Последние обновления v4.3.2</h3>
     <ul style="padding-left:1.2rem;color:var(--text-dim);font-size:.9rem;line-height:1.7">
       <li><strong>Рынок</strong> превращён в карту путей развития с реальными цифрами дохода.</li>
       <li><strong>Промт-академия</strong> расширена до 10 практических примеров с разбором.</li>
@@ -1674,7 +1680,7 @@ section.active{display:block}
     <div class="card">
       <h3>О приложении</h3>
       <div class="stat-row"><span class="stat-label">Название</span><span class="stat-value">PWA AI Guide</span></div>
-      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.3.1</span></div>
+      <div class="stat-row"><span class="stat-label">Версия</span><span class="stat-value">4.3.2</span></div>
       <div class="stat-row"><span class="stat-label">Лицензия</span><span class="stat-value">MIT</span></div>
       <div class="stat-row"><span class="stat-label">IndexedDB</span><span class="stat-value">v3 (9 stores)</span></div>
       <div class="stat-row"><span class="stat-label">Иконка</span><span class="stat-value">Neural Spider</span></div>
@@ -1928,7 +1934,7 @@ section.active{display:block}
 
 <!-- ФУТЕР -->
 <footer class="app-footer">
-  <p>PWA AI Guide v4.3.1 · Работает офлайн · Данные хранятся локально</p>
+  <p>PWA AI Guide v4.3.2 · Работает офлайн · Данные хранятся локально</p>
   <p style="margin-top:.4rem">* — партнёрские ссылки. Мы получаем комиссию от партнёров без дополнительных затрат для вас.</p>
   <p style="margin-top:.4rem">Российские сервисы (GigaChat, Kandinsky, Kwork) рекомендуются приоритетно для аудитории РФ.</p>
   <p style="margin-top:.4rem; font-size:.7rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:.4rem;">
@@ -2120,7 +2126,7 @@ Negative prompt: размытость, лишние пальцы, низкое �
 <!-- =================================================================== -->
 <script>
 /* ========================
-   PWA AI Guide v4.3.1 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash + Module 3 + Hotfixes
+   PWA AI Guide v4.3.2 — Module 0 + 1.5 + Personal Risks + Team + About + Templates + Feedback + Splash + Module 3 + Hotfixes
    ======================== */
 
 const DB_NAME = 'AIGuideDB';
@@ -2977,6 +2983,15 @@ function initTabs() {
     const tabId = btn.dataset.tab;
     document.querySelectorAll('#main-nav button').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    /* === [NAV_FIX_JS_START] === */
+    const navEl = btn.closest('.app-nav');
+    if(navEl){
+      const navRect = navEl.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      const scrollLeft = navEl.scrollLeft + (btnRect.left - navRect.left) - (navRect.width/2) + (btnRect.width/2);
+      navEl.scrollTo({left:Math.max(0,scrollLeft),behavior:'smooth'});
+    }
+    /* === [NAV_FIX_JS_END] === */
     document.querySelectorAll('main > section').forEach(s => s.classList.remove('active'));
     document.getElementById('tab-' + tabId)?.classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
@@ -4199,7 +4214,7 @@ function copyPartnerResult(id) {
 /* === [MODULE3_END: JS Functions] === */
 
 /* === [HOTFIX_SWIPE_START] === */
-/* Свайп по вкладкам (Android) — v4.3.1 */
+/* Свайп по вкладкам (Android) — v4.3.2 */
 (function(){
   let startX = 0, startY = 0, endX = 0;
   const threshold = 60;
@@ -4295,7 +4310,7 @@ async function init() {
     if (e.target === document.getElementById('tutorial-modal')) hideTutorial();
   });
 
-  console.log('PWA AI Guide v4.3.1 (Full Integration) initialized');
+  console.log('PWA AI Guide v4.3.2 (Full Integration) initialized');
 }
 
 /* Исправленная инициализация для Safari iOS */
